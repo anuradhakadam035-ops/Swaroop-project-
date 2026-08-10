@@ -60,9 +60,6 @@ Provides a personalized path for developing required skills.
 ### 💼 Career Opportunities
 Suggests relevant jobs, internships and career options.
 
-### 🏆 Certification Suggestions
-Recommends useful certifications and courses.
-
 ### 📈 Career Growth
 Provides information about career scope and future opportunities.
 
