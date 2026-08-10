@@ -68,6 +68,9 @@ Provides information about career scope and future opportunities.
 </table>
 
 ---
+<img width="1656" height="917" alt="Screenshot 2026-08-10 230158" src="https://github.com/user-attachments/assets/ab952ca1-32aa-4b45-badd-dbcd3450a22f" />
+
+<img width="1656" height="917" alt="image" src="https://github.com/user-attachments/assets/b0d1741d-f28b-4687-80cc-87acc62fce31" />
 
 <img width="4754" height="6731" alt="diagram" src="https://github.com/user-attachments/assets/2ec6b6f8-5e71-449b-9fc5-f0cd12f34f53" />
 
