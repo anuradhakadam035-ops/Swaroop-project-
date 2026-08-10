@@ -69,6 +69,9 @@ Provides information about career scope and future opportunities.
 
 ---
 
+<img width="4754" height="6731" alt="diagram" src="https://github.com/user-attachments/assets/2ec6b6f8-5e71-449b-9fc5-f0cd12f34f53" />
+
+
 # 🧩 How It Works
 
 ```mermaid
