@@ -1,4 +1,4 @@
-# 🚀 AI Career Guidance System
+# 🚀 AI Career Guidance System (VIDYASETU)
 
 <p align="center">
   <img src="https://img.shields.io/badge/AI-Career%20Guidance-6C63FF?style=for-the-badge&logo=openai&logoColor=white">
