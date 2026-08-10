@@ -1,0 +1,827 @@
+/* =========================================================
+   AI CAREER GUIDANCE
+   FANCY PROFILE PAGE
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #e8f0ff;
+
+    background:
+        radial-gradient(circle at 10% 10%,
+            rgba(34, 211, 238, .12),
+            transparent 27%),
+        radial-gradient(circle at 90% 15%,
+            rgba(99, 102, 241, .15),
+            transparent 30%),
+        radial-gradient(circle at 50% 100%,
+            rgba(168, 85, 247, .10),
+            transparent 35%),
+        linear-gradient(135deg,
+            #060a16,
+            #0b1224 55%,
+            #070b17);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    top: -180px;
+    left: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(34, 211, 238, .12),
+            transparent 68%);
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    right: -200px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(99, 102, 241, .14),
+            transparent 68%);
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+
+    max-width: 1000px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.container>.card {
+
+    position: relative;
+
+    padding: 45px !important;
+
+    border: 1px solid rgba(255, 255, 255, .09) !important;
+
+    border-radius: 28px !important;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, .075),
+            rgba(255, 255, 255, .025)) !important;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, .45),
+        inset 0 1px 0 rgba(255, 255, 255, .06) !important;
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    overflow: hidden;
+
+    animation:
+        profileAppear .7s ease both;
+}
+
+
+@keyframes profileAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* Top neon line */
+
+.container>.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #22d3ee,
+            #6366f1,
+            transparent);
+
+    box-shadow:
+        0 0 18px rgba(34, 211, 238, .45);
+}
+
+
+/* =========================================================
+   PROFILE HEADER
+========================================================= */
+
+.text-center {
+
+    position: relative;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px !important;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .06);
+}
+
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+
+#profilePhoto {
+
+    width: 145px;
+
+    height: 145px;
+
+    object-fit: cover;
+
+    border-radius: 50% !important;
+
+    padding: 4px;
+
+    background:
+        linear-gradient(135deg,
+            #22d3ee,
+            #6366f1,
+            #a855f7);
+
+    box-shadow:
+        0 0 0 5px rgba(34, 211, 238, .05),
+
+        0 0 40px rgba(34, 211, 238, .20),
+
+        0 20px 45px rgba(0, 0, 0, .30);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+    animation:
+        photoGlow 3s ease-in-out infinite;
+}
+
+
+@keyframes photoGlow {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 0 0 5px rgba(34, 211, 238, .04),
+
+            0 0 30px rgba(34, 211, 238, .16),
+
+            0 20px 45px rgba(0, 0, 0, .30);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 0 7px rgba(99, 102, 241, .05),
+
+            0 0 45px rgba(99, 102, 241, .25),
+
+            0 20px 45px rgba(0, 0, 0, .30);
+
+    }
+
+}
+
+
+#profilePhoto:hover {
+
+    transform:
+        scale(1.05) rotate(2deg);
+
+}
+
+
+/* =========================================================
+   UPLOAD BUTTON
+========================================================= */
+
+.upload-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 15px;
+
+    padding: 11px 20px;
+
+    border: 1px solid rgba(34, 211, 238, .20);
+
+    border-radius: 12px;
+
+    color: #9eefff;
+
+    background:
+        rgba(34, 211, 238, .07);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+
+.upload-btn i {
+
+    color: #22d3ee;
+
+}
+
+
+.upload-btn:hover {
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            rgba(34, 211, 238, .18),
+            rgba(99, 102, 241, .15));
+
+    border-color:
+        rgba(34, 211, 238, .45);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(34, 211, 238, .12);
+
+}
+
+
+/* =========================================================
+   FORM LABELS
+========================================================= */
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    letter-spacing: .2px;
+}
+
+
+label::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 3px;
+
+    height: 10px;
+
+    margin-right: 7px;
+
+    border-radius: 4px;
+
+    background:
+        linear-gradient(#22d3ee,
+            #6366f1);
+
+    vertical-align: -1px;
+}
+
+
+/* =========================================================
+   FORM INPUTS
+========================================================= */
+
+.form-control {
+
+    min-height: 47px;
+
+    padding: 11px 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, .08) !important;
+
+    border-radius: 12px !important;
+
+    color: #e5edf9 !important;
+
+    background:
+        rgba(255, 255, 255, .035) !important;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .025) !important;
+
+    transition:
+        border-color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+
+.form-control::placeholder {
+
+    color: #52627e;
+
+}
+
+
+.form-control:focus {
+
+    color: #ffffff !important;
+
+    background:
+        rgba(34, 211, 238, .045) !important;
+
+    border-color:
+        rgba(34, 211, 238, .45) !important;
+
+    outline: none !important;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 211, 238, .07),
+
+        0 8px 25px rgba(34, 211, 238, .06) !important;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   READ ONLY EMAIL
+========================================================= */
+
+#email {
+
+    color: #71809d !important;
+
+    background:
+        rgba(255, 255, 255, .025) !important;
+
+    cursor: not-allowed;
+
+}
+
+
+#email:focus {
+
+    border-color:
+        rgba(255, 255, 255, .10) !important;
+
+    box-shadow: none !important;
+
+    transform: none;
+
+}
+
+
+/* =========================================================
+   TEXTAREAS
+========================================================= */
+
+textarea.form-control {
+
+    min-height: 105px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.row {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+#saveBtn {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    margin-top: 8px;
+
+    border: none !important;
+
+    border-radius: 14px !important;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #06b6d4,
+            #2563eb 50%,
+            #6366f1) !important;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: .3px;
+
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, .22);
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+#saveBtn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, .20),
+            transparent);
+
+    transform: skewX(-20deg);
+
+    transition: .6s;
+
+}
+
+
+#saveBtn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 17px 40px rgba(37, 99, 235, .35),
+
+        0 0 25px rgba(34, 211, 238, .10);
+
+}
+
+
+#saveBtn:hover::before {
+
+    left: 130%;
+
+}
+
+
+#saveBtn:active {
+
+    transform:
+        translateY(0) scale(.98);
+
+}
+
+
+/* =========================================================
+   INPUT GROUP GLOW
+========================================================= */
+
+.col-md-6,
+.col-12 {
+
+    animation:
+        fieldAppear .5s ease both;
+}
+
+
+.col-md-6:nth-child(1) {
+    animation-delay: .05s;
+}
+
+.col-md-6:nth-child(2) {
+    animation-delay: .10s;
+}
+
+.col-md-6:nth-child(3) {
+    animation-delay: .15s;
+}
+
+.col-md-6:nth-child(4) {
+    animation-delay: .20s;
+}
+
+.col-md-6:nth-child(5) {
+    animation-delay: .25s;
+}
+
+.col-md-6:nth-child(6) {
+    animation-delay: .30s;
+}
+
+.col-12:nth-child(7) {
+    animation-delay: .35s;
+}
+
+.col-12:nth-child(8) {
+    animation-delay: .40s;
+}
+
+
+@keyframes fieldAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   CUSTOM FILE INPUT STATE
+========================================================= */
+
+#photoInput {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #070b17;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(#22d3ee,
+            #6366f1);
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+
+        padding-top: 25px !important;
+
+        padding-bottom: 25px !important;
+
+    }
+
+
+    .container>.card {
+
+        padding: 28px 20px !important;
+
+        border-radius: 22px !important;
+
+    }
+
+
+    #profilePhoto {
+
+        width: 120px;
+
+        height: 120px;
+
+    }
+
+
+    .form-control {
+
+        min-height: 45px;
+
+    }
+
+
+    textarea.form-control {
+
+        min-height: 95px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .container {
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+    }
+
+
+    .container>.card {
+
+        padding: 22px 15px !important;
+
+    }
+
+
+    #profilePhoto {
+
+        width: 105px;
+
+        height: 105px;
+
+    }
+
+
+    .upload-btn {
+
+        padding: 10px 16px;
+
+    }
+
+
+    label {
+
+        font-size: 10px;
+
+    }
+
+
+    .form-control {
+
+        font-size: 11px;
+
+    }
+
+
+    #saveBtn {
+
+        min-height: 48px;
+
+    }
+
+}

@@ -1,0 +1,890 @@
+/* =========================================================
+   VISIONX ADMIN LOGIN
+   PREMIUM GLASS / NEON UI
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    min-height: 100vh;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(0, 212, 255, 0.12),
+            transparent 30%),
+        radial-gradient(circle at 85% 80%,
+            rgba(91, 70, 255, 0.15),
+            transparent 35%),
+        linear-gradient(135deg,
+            #050b18,
+            #0b1222 50%,
+            #070b19);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   GRID BACKGROUND
+========================================================= */
+
+.grid-bg {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px);
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(to bottom,
+            black 0%,
+            rgba(0, 0, 0, 0.5) 60%,
+            transparent 100%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   GLOW BLOBS
+========================================================= */
+
+.blob {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    opacity: 0.3;
+}
+
+
+.blob1 {
+
+    width: 350px;
+    height: 350px;
+
+    left: -150px;
+    top: -130px;
+
+    background: #00d9ff;
+
+    animation:
+        blobMove1 10s ease-in-out infinite;
+}
+
+
+.blob2 {
+
+    width: 400px;
+    height: 400px;
+
+    right: -170px;
+    bottom: -170px;
+
+    background: #5546ff;
+
+    animation:
+        blobMove2 12s ease-in-out infinite;
+}
+
+
+.blob3 {
+
+    width: 250px;
+    height: 250px;
+
+    right: 25%;
+    top: 10%;
+
+    background: #008cff;
+
+    opacity: 0.12;
+
+    animation:
+        blobMove3 9s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   BLOB ANIMATION
+========================================================= */
+
+@keyframes blobMove1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(50px, 35px);
+    }
+}
+
+
+@keyframes blobMove2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-40px, -35px);
+    }
+}
+
+
+@keyframes blobMove3 {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   LOGIN CONTAINER
+========================================================= */
+
+.login-container {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    padding: 48px 52px;
+
+    border-radius: 32px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(145deg,
+            rgba(31, 47, 65, 0.94),
+            rgba(17, 25, 43, 0.94));
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(30px);
+
+    -webkit-backdrop-filter: blur(30px);
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    text-align: center;
+
+    animation:
+        cardEntry 0.8s ease forwards;
+}
+
+
+/* Top neon line */
+
+.login-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 8%;
+
+    width: 84%;
+    height: 2px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #00d9ff,
+            #466aff,
+            #704cff,
+            transparent);
+
+    box-shadow:
+        0 0 18px #00d9ff;
+}
+
+
+/* Decorative glow */
+
+.login-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -150px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(0, 217, 255, 0.15),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+
+@keyframes cardEntry {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+
+    width: 98px;
+    height: 98px;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(135deg,
+            #05d9ff,
+            #1677ff 55%,
+            #6045e9);
+
+    box-shadow:
+        0 0 25px rgba(0, 210, 255, 0.45),
+
+        0 0 60px rgba(79, 70, 255, 0.25);
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        logoPulse 3s ease-in-out infinite;
+}
+
+
+.logo i {
+
+    font-size: 42px;
+
+    color: white;
+
+    filter:
+        drop-shadow(0 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        box-shadow:
+            0 0 25px rgba(0, 210, 255, 0.45),
+            0 0 60px rgba(79, 70, 255, 0.25);
+    }
+
+    50% {
+        transform: translateY(-4px);
+        box-shadow:
+            0 0 38px rgba(0, 210, 255, 0.65),
+            0 0 80px rgba(79, 70, 255, 0.35);
+    }
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 30px;
+}
+
+
+.admin-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 9px 20px;
+
+    border-radius: 30px;
+
+    color: #55ddff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    background:
+        rgba(0, 205, 255, 0.07);
+
+    border: 1px solid rgba(0, 210, 255, 0.4);
+
+    box-shadow:
+        0 0 25px rgba(0, 210, 255, 0.07);
+}
+
+
+.admin-badge i {
+
+    font-size: 14px;
+}
+
+
+.heading p {
+
+    margin-top: 18px;
+
+    color: #99a7c4;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.login-message {
+
+    min-height: 0;
+
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+
+.login-message.error {
+
+    padding: 11px 14px;
+
+    color: #ff8fa1;
+
+    background:
+        rgba(255, 50, 80, 0.08);
+
+    border: 1px solid rgba(255, 50, 80, 0.2);
+}
+
+
+.login-message.success {
+
+    padding: 11px 14px;
+
+    color: #68f5c5;
+
+    background:
+        rgba(0, 255, 170, 0.08);
+
+    border: 1px solid rgba(0, 255, 170, 0.2);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#adminLoginForm {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+
+    text-align: left;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   EMAIL INPUT
+========================================================= */
+
+#email {
+
+    width: 100%;
+
+    height: 57px;
+
+    padding: 0 18px;
+
+    color: #ffffff;
+
+    background:
+        rgba(5, 13, 27, 0.7);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+#email::placeholder,
+#password::placeholder {
+
+    color: #71809c;
+}
+
+
+#email:hover,
+#password:hover {
+
+    border-color:
+        rgba(0, 215, 255, 0.35);
+}
+
+
+#email:focus,
+#password:focus {
+
+    border-color: #00d9ff;
+
+    background:
+        rgba(5, 18, 35, 0.85);
+
+    box-shadow:
+        0 0 0 3px rgba(0, 217, 255, 0.08),
+
+        0 0 25px rgba(0, 217, 255, 0.08);
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+.password-wrapper {
+
+    width: 100%;
+
+    position: relative;
+}
+
+
+#password {
+
+    width: 100%;
+
+    height: 57px;
+
+    padding:
+        0 55px 0 18px;
+
+    color: #ffffff;
+
+    background:
+        rgba(5, 13, 27, 0.7);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   PASSWORD EYE
+========================================================= */
+
+.password-toggle {
+
+    position: absolute;
+
+    top: 50%;
+    right: 16px;
+
+    transform:
+        translateY(-50%);
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #70809d;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    transition: 0.25s ease;
+}
+
+
+.password-toggle:hover {
+
+    color: #00d9ff;
+
+    background:
+        rgba(0, 217, 255, 0.08);
+
+    transform:
+        translateY(-50%) scale(1.08);
+}
+
+
+.password-toggle:active {
+
+    transform:
+        translateY(-50%) scale(0.95);
+}
+
+
+.password-toggle i {
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+#loginBtn {
+
+    width: 100%;
+
+    height: 57px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 15px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #00cfff,
+            #246bff 55%,
+            #6245e8);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(0, 110, 255, 0.28);
+
+    transition: 0.3s ease;
+}
+
+
+/* Button shine */
+
+#loginBtn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    transform:
+        skewX(-20deg);
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent);
+
+    transition: 0.65s ease;
+}
+
+
+#loginBtn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 17px 42px rgba(0, 110, 255, 0.4);
+}
+
+
+#loginBtn:hover::before {
+
+    left: 140%;
+}
+
+
+#loginBtn:active {
+
+    transform:
+        translateY(0);
+}
+
+
+#loginBtn:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow:
+        none;
+}
+
+
+/* =========================================================
+   INPUT AUTOFILL FIX
+========================================================= */
+
+#email:-webkit-autofill,
+#password:-webkit-autofill {
+
+    -webkit-text-fill-color: #ffffff;
+
+    -webkit-box-shadow:
+        0 0 0 1000px #0b172b inset;
+
+    transition:
+        background-color 9999s ease-in-out 0s;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .login-container {
+
+        padding: 20px;
+
+        min-height: 100vh;
+    }
+
+    .login-card {
+
+        padding: 38px 25px;
+
+        border-radius: 25px;
+    }
+
+    .logo {
+
+        width: 82px;
+        height: 82px;
+
+        border-radius: 25px;
+    }
+
+    .logo i {
+
+        font-size: 35px;
+    }
+
+    .admin-badge {
+
+        font-size: 11px;
+
+        padding: 8px 16px;
+    }
+
+    .heading p {
+
+        font-size: 13px;
+    }
+
+    #email,
+    #password,
+    #loginBtn {
+
+        height: 54px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .login-card {
+
+        padding:
+            30px 18px;
+    }
+
+    .logo {
+
+        width: 75px;
+        height: 75px;
+    }
+
+    .logo i {
+
+        font-size: 31px;
+    }
+}

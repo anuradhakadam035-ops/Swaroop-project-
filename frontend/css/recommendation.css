@@ -1,0 +1,1150 @@
+/* =========================================================
+   AI CAREER GUIDANCE
+   FANCY RECOMMENDATION PAGE
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #eaf2ff;
+
+    background:
+        radial-gradient(circle at 8% 8%,
+            rgba(34, 211, 238, .12),
+            transparent 25%),
+        radial-gradient(circle at 92% 15%,
+            rgba(99, 102, 241, .16),
+            transparent 30%),
+        radial-gradient(circle at 50% 100%,
+            rgba(168, 85, 247, .10),
+            transparent 35%),
+        linear-gradient(135deg,
+            #060a16,
+            #0b1224 52%,
+            #070b17);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    top: -220px;
+    left: -200px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(34, 211, 238, .12),
+            transparent 68%);
+
+    filter: blur(35px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    right: -230px;
+    bottom: -220px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(99, 102, 241, .14),
+            transparent 68%);
+
+    filter: blur(35px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    max-width: 1100px;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.title {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 10px 0 35px;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: -.7px;
+
+    text-align: center;
+
+    animation:
+        titleAppear .7s ease both;
+}
+
+
+.title i {
+
+    width: 50px;
+    height: 50px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            #06b6d4,
+            #2563eb,
+            #6366f1);
+
+    box-shadow:
+        0 0 30px rgba(34, 211, 238, .25);
+
+    font-size: 21px;
+
+    animation:
+        robotFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes robotFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+@keyframes titleAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   TOP INFORMATION CARDS
+========================================================= */
+
+.info-card {
+
+    position: relative;
+
+    min-height: 145px;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, .075),
+            rgba(255, 255, 255, .025));
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .20);
+
+    backdrop-filter: blur(20px);
+
+    transition:
+        .35s ease;
+
+    animation:
+        cardAppear .6s ease both;
+}
+
+
+/* glowing top line */
+
+.info-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 15%;
+
+    width: 70%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            #22d3ee,
+            #6366f1,
+            transparent);
+
+    opacity: .65;
+}
+
+
+/* background orb */
+
+.info-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    top: -45px;
+    right: -40px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(34, 211, 238, .09);
+
+    filter: blur(15px);
+
+    transition: .4s;
+}
+
+
+.info-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(34, 211, 238, .22);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, .28),
+
+        0 0 25px rgba(34, 211, 238, .06);
+}
+
+
+.info-card:hover::after {
+
+    transform:
+        scale(1.5);
+}
+
+
+/* =========================================================
+   INFO LABEL
+========================================================= */
+
+.info-card h6 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 12px;
+
+    color: #71809d;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.info-card h6::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 3px;
+    height: 10px;
+
+    margin-right: 7px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(#22d3ee,
+            #6366f1);
+
+    vertical-align: -1px;
+}
+
+
+/* =========================================================
+   INFO VALUE
+========================================================= */
+
+.info-card h3 {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    word-break: break-word;
+}
+
+
+/* Match */
+
+#match {
+
+    color: #22d3ee;
+
+    text-shadow:
+        0 0 15px rgba(34, 211, 238, .25);
+}
+
+
+/* Salary */
+
+#salary {
+
+    color: #6ee7b7;
+}
+
+
+/* Growth */
+
+#growth {
+
+    color: #a78bfa;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+
+    position: relative;
+
+    margin-top: 28px;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, .065),
+            rgba(255, 255, 255, .022));
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .18);
+
+    backdrop-filter: blur(20px);
+
+    overflow: hidden;
+
+    animation:
+        sectionAppear .65s ease both;
+}
+
+
+.section::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 10%;
+
+    width: 80%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(34, 211, 238, .45),
+            rgba(99, 102, 241, .4),
+            transparent);
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.section h4 {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0 0 22px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+.section h4 i {
+
+    width: 35px;
+    height: 35px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #22d3ee;
+
+    background:
+        rgba(34, 211, 238, .08);
+
+    border:
+        1px solid rgba(34, 211, 238, .13);
+
+    font-size: 13px;
+
+    box-shadow:
+        0 0 15px rgba(34, 211, 238, .05);
+}
+
+
+/* Different section icons */
+
+.section:nth-of-type(2) h4 i {
+
+    color: #fbbf24;
+
+    background:
+        rgba(251, 191, 36, .08);
+
+    border-color:
+        rgba(251, 191, 36, .14);
+}
+
+
+.section:nth-of-type(3) h4 i {
+
+    color: #fb7185;
+
+    background:
+        rgba(251, 113, 133, .08);
+
+    border-color:
+        rgba(251, 113, 133, .14);
+}
+
+
+.section:nth-of-type(4) h4 i {
+
+    color: #a78bfa;
+
+    background:
+        rgba(167, 139, 250, .08);
+
+    border-color:
+        rgba(167, 139, 250, .14);
+}
+
+
+.section:nth-of-type(5) h4 i {
+
+    color: #34d399;
+
+    background:
+        rgba(52, 211, 153, .08);
+
+    border-color:
+        rgba(52, 211, 153, .14);
+}
+
+
+/* =========================================================
+   STRENGTHS / SKILL GAP
+========================================================= */
+
+#strengths,
+#skillGap {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+
+/* =========================================================
+   GENERATED ITEMS
+========================================================= */
+
+#strengths span,
+#skillGap span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+
+    color: #a7f3d0;
+
+    background:
+        linear-gradient(135deg,
+            rgba(16, 185, 129, .09),
+            rgba(34, 211, 238, .06));
+
+    border:
+        1px solid rgba(52, 211, 153, .15);
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    transition: .3s;
+}
+
+
+#strengths span::before {
+
+    content: "✓";
+
+    margin-right: 6px;
+
+    color: #34d399;
+
+    font-weight: 700;
+}
+
+
+#strengths span:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(52, 211, 153, .4);
+
+    box-shadow:
+        0 8px 20px rgba(52, 211, 153, .08);
+}
+
+
+/* Skill gap */
+
+#skillGap span {
+
+    color: #fecaca;
+
+    background:
+        linear-gradient(135deg,
+            rgba(239, 68, 68, .09),
+            rgba(245, 158, 11, .06));
+
+    border-color:
+        rgba(239, 68, 68, .15);
+}
+
+
+#skillGap span::before {
+
+    content: "!";
+
+    width: 17px;
+    height: 17px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 6px;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        #ef4444;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+#skillGap span:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(239, 68, 68, .4);
+
+    box-shadow:
+        0 8px 20px rgba(239, 68, 68, .08);
+}
+
+
+/* =========================================================
+   COURSE CARDS
+========================================================= */
+
+#courses {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/*
+   Works with common course HTML generated
+   by recommendation.js
+*/
+
+#courses>div,
+#courses .course-card,
+#courses a {
+
+    position: relative;
+
+    display: block;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid rgba(255, 255, 255, .07);
+
+    transition: .3s;
+}
+
+
+#courses>div:hover,
+#courses .course-card:hover,
+#courses a:hover {
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            rgba(99, 102, 241, .10),
+            rgba(34, 211, 238, .06));
+
+    border-color:
+        rgba(99, 102, 241, .25);
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(99, 102, 241, .08);
+}
+
+
+#courses>div::before,
+#courses .course-card::before {
+
+    content: "📚";
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   ROADMAP
+========================================================= */
+
+.roadmap {
+
+    position: relative;
+
+    margin: 0;
+
+    padding: 5px 0 5px 35px;
+
+    list-style: none;
+}
+
+
+/* vertical timeline */
+
+.roadmap::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 9px;
+
+    top: 8px;
+    bottom: 8px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(180deg,
+            #22d3ee,
+            #6366f1,
+            #a855f7);
+
+    box-shadow:
+        0 0 12px rgba(34, 211, 238, .2);
+}
+
+
+.roadmap li {
+
+    position: relative;
+
+    margin-bottom: 17px;
+
+    padding: 16px 18px;
+
+    border-radius: 14px;
+
+    color: #b8c5d9;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid rgba(255, 255, 255, .065);
+
+    font-size: 11px;
+
+    transition: .3s;
+}
+
+
+.roadmap li:last-child {
+
+    margin-bottom: 0;
+}
+
+
+.roadmap li::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -32px;
+
+    top: 20px;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background:
+        #22d3ee;
+
+    border:
+        3px solid #0b1224;
+
+    box-shadow:
+        0 0 15px rgba(34, 211, 238, .45);
+}
+
+
+.roadmap li:hover {
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            rgba(34, 211, 238, .07),
+            rgba(99, 102, 241, .07));
+
+    border-color:
+        rgba(34, 211, 238, .20);
+
+    transform:
+        translateX(5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .15);
+}
+
+
+/* =========================================================
+   COMMON GENERATED HEADINGS
+========================================================= */
+
+#courses h5,
+#courses h6,
+#roadmap h5,
+#roadmap h6 {
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+#courses p,
+#roadmap p {
+
+    color: #71809d;
+
+    font-size: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING STATE
+========================================================= */
+
+#career:empty::after,
+#salary:empty::after,
+#growth:empty::after {
+
+    content: "Loading...";
+
+    color: #52627e;
+
+    font-size: 12px;
+
+    animation:
+        loadingPulse 1.2s infinite;
+}
+
+
+@keyframes loadingPulse {
+
+    0%,
+    100% {
+        opacity: .35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes sectionAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* stagger top cards */
+
+.row .col-md-3:nth-child(1) .info-card {
+    animation-delay: .05s;
+}
+
+.row .col-md-3:nth-child(2) .info-card {
+    animation-delay: .12s;
+}
+
+.row .col-md-3:nth-child(3) .info-card {
+    animation-delay: .19s;
+}
+
+.row .col-md-3:nth-child(4) .info-card {
+    animation-delay: .26s;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #070b17;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(#22d3ee,
+            #6366f1);
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+
+        padding-top: 25px !important;
+
+        padding-bottom: 30px !important;
+
+    }
+
+
+    .title {
+
+        font-size: 23px;
+
+    }
+
+
+    .title i {
+
+        width: 43px;
+        height: 43px;
+
+        font-size: 18px;
+
+    }
+
+
+    .info-card {
+
+        min-height: 125px;
+
+        padding: 20px;
+
+    }
+
+
+    .info-card h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .section {
+
+        padding: 22px;
+
+        border-radius: 18px;
+
+    }
+
+
+    #courses {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .title {
+
+        font-size: 20px;
+
+        flex-direction: column;
+
+    }
+
+
+    .title i {
+
+        width: 48px;
+        height: 48px;
+
+    }
+
+
+    .info-card {
+
+        min-height: 115px;
+
+    }
+
+
+    .section h4 {
+
+        font-size: 15px;
+
+    }
+
+
+    #strengths span,
+    #skillGap span {
+
+        font-size: 9px;
+
+        padding: 8px 10px;
+
+    }
+
+
+    .roadmap {
+
+        padding-left: 30px;
+
+    }
+
+}

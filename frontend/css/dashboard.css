@@ -1,0 +1,911 @@
+/* =========================================================
+   AI CAREER GUIDANCE
+   STUDENT DASHBOARD
+   FANCY DARK BLUE + PURPLE UI
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    color: #f4f7ff;
+
+    background:
+        radial-gradient(circle at 10% 10%,
+            rgba(0, 214, 255, 0.12),
+            transparent 28%),
+
+        radial-gradient(circle at 90% 10%,
+            rgba(116, 67, 255, 0.16),
+            transparent 30%),
+
+        radial-gradient(circle at 50% 100%,
+            rgba(22, 91, 255, 0.10),
+            transparent 35%),
+
+        linear-gradient(135deg,
+            #020b17 0%,
+            #071426 45%,
+            #0a0a24 100%);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container-fluid {
+    padding: 0 !important;
+}
+
+.row {
+    margin: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    min-height: 100vh;
+
+    padding: 30px 20px !important;
+
+    background:
+        linear-gradient(180deg,
+            rgba(5, 22, 42, 0.98),
+            rgba(3, 10, 25, 0.99));
+
+    border-right:
+        1px solid rgba(86, 135, 198, 0.18);
+
+    box-shadow:
+        10px 0 45px rgba(0, 0, 0, 0.22);
+
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding:
+        8px 10px 32px;
+
+    color: #ffffff;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.logo i {
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: #ffffff;
+
+    font-size: 25px;
+
+    background:
+        linear-gradient(135deg,
+            #0dd8f5,
+            #4c50eb);
+
+    box-shadow:
+        0 10px 30px rgba(31, 145, 255, 0.30);
+}
+
+
+/* =========================================================
+   SIDEBAR LIST
+   ========================================================= */
+
+.sidebar ul {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.sidebar li {
+    min-height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding:
+        8px 15px;
+
+    border-radius: 17px;
+
+    color: #a9b9cf;
+
+    font-size: 16px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    border:
+        1px solid transparent;
+
+    transition:
+        all 0.25s ease;
+}
+
+
+/* =========================================================
+   SIDEBAR ICON
+   ========================================================= */
+
+.sidebar li i {
+    width: 45px;
+
+    height: 45px;
+
+    min-width: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: #7f9bbd;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    font-size: 19px;
+
+    transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   SIDEBAR HOVER
+   ========================================================= */
+
+.sidebar li:hover {
+    color: #ffffff;
+
+    background:
+        linear-gradient(90deg,
+            rgba(24, 86, 156, 0.20),
+            rgba(55, 62, 140, 0.10));
+
+    border-color:
+        rgba(58, 139, 220, 0.18);
+
+    transform:
+        translateX(3px);
+}
+
+.sidebar li:hover i {
+    color: #50dcf5;
+
+    background:
+        rgba(24, 184, 231, 0.09);
+}
+
+
+/* =========================================================
+   ACTIVE SIDEBAR
+   ========================================================= */
+
+.sidebar li.active {
+    position: relative;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            rgba(25, 91, 166, 0.42),
+            rgba(64, 55, 153, 0.28));
+
+    border-color:
+        rgba(64, 146, 227, 0.25);
+
+    box-shadow:
+        0 10px 30px rgba(20, 83, 160, 0.13);
+}
+
+.sidebar li.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: -1px;
+
+    top: 12px;
+
+    width: 4px;
+
+    height: 38px;
+
+    border-radius: 0 5px 5px 0;
+
+    background:
+        linear-gradient(#18d8f4,
+            #4567f4);
+
+    box-shadow:
+        0 0 15px rgba(26, 215, 244, 0.8);
+}
+
+.sidebar li.active i {
+    color: #4fe2f8;
+
+    background:
+        rgba(31, 197, 239, 0.12);
+
+    box-shadow:
+        0 0 20px rgba(31, 197, 239, 0.08);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+    min-height: 100vh;
+
+    padding:
+        32px 35px 50px !important;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.topbar {
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding:
+        24px 28px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(15, 35, 62, 0.94),
+            rgba(8, 21, 43, 0.96));
+
+    border:
+        1px solid rgba(100, 143, 200, 0.17);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.17);
+}
+
+
+/* =========================================================
+   WELCOME TEXT
+   ========================================================= */
+
+.topbar h2 {
+    color: #ffffff;
+
+    font-size: 31px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+
+    margin-bottom: 7px;
+}
+
+.topbar h2 span {
+    color: #35d9f5;
+
+    text-shadow:
+        0 0 20px rgba(35, 213, 243, 0.20);
+}
+
+.topbar p {
+    margin: 0;
+
+    color: #8296b2;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
+
+.profile-img {
+    width: 70px;
+
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    border:
+        3px solid rgba(57, 207, 244, 0.45);
+
+    background:
+        #101d32;
+
+    box-shadow:
+        0 0 25px rgba(29, 183, 239, 0.15);
+}
+
+
+/* =========================================================
+   DASHBOARD CARDS
+   ========================================================= */
+
+.card-box {
+    min-height: 185px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(15, 37, 64, 0.95),
+            rgba(7, 20, 42, 0.97));
+
+    border:
+        1px solid rgba(98, 140, 196, 0.17);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   CARD GLOW
+   ========================================================= */
+
+.card-box::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    right: -50px;
+
+    bottom: -50px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(26, 189, 239, 0.08);
+
+    filter: blur(5px);
+}
+
+.card-box:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(52, 171, 235, 0.30);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.24),
+        0 0 25px rgba(24, 135, 219, 0.06);
+}
+
+
+/* =========================================================
+   CARD ICON
+   ========================================================= */
+
+.card-box>i {
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 16px;
+
+    border-radius: 16px;
+
+    color: #4eddf5;
+
+    background:
+        linear-gradient(135deg,
+            rgba(17, 198, 239, 0.13),
+            rgba(74, 75, 225, 0.12));
+
+    font-size: 23px;
+}
+
+
+/* Different card icon colors */
+
+.col-md-3:nth-child(2) .card-box>i {
+    color: #9c82ff;
+
+    background:
+        rgba(131, 82, 239, 0.13);
+}
+
+.col-md-3:nth-child(3) .card-box>i {
+    color: #52a7ff;
+
+    background:
+        rgba(55, 133, 239, 0.13);
+}
+
+.col-md-3:nth-child(4) .card-box>i {
+    color: #42e38a;
+
+    background:
+        rgba(41, 212, 112, 0.12);
+}
+
+
+/* =========================================================
+   CARD VALUE
+   ========================================================= */
+
+.card-box h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CARD LABEL
+   ========================================================= */
+
+.card-box p {
+    margin:
+        7px 0 0;
+
+    color: #8497b2;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SKILLS SECTION
+   ========================================================= */
+
+.dashboard-section {
+    padding:
+        27px 29px;
+
+    min-height: 230px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(13, 32, 56, 0.96),
+            rgba(7, 19, 40, 0.97));
+
+    border:
+        1px solid rgba(101, 141, 194, 0.17);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   SKILLS HEADING
+   ========================================================= */
+
+.dashboard-section h4 {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 22px;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    border-bottom:
+        1px solid rgba(105, 139, 188, 0.12);
+}
+
+.dashboard-section h4 i {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: #35ddf5;
+
+    background:
+        rgba(27, 195, 237, 0.10);
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   SKILLS CONTAINER
+   ========================================================= */
+
+#skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 13px;
+}
+
+
+/* =========================================================
+   SKILL BADGES
+   ========================================================= */
+
+#skills span,
+#skills .skill,
+#skills div {
+    padding:
+        10px 16px;
+
+    color: #a9eaf7;
+
+    background:
+        linear-gradient(135deg,
+            rgba(20, 166, 213, 0.10),
+            rgba(70, 74, 206, 0.10));
+
+    border:
+        1px solid rgba(44, 183, 224, 0.19);
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    transition:
+        0.2s ease;
+}
+
+#skills span:hover,
+#skills .skill:hover,
+#skills div:hover {
+    color: #ffffff;
+
+    background:
+        linear-gradient(135deg,
+            rgba(18, 176, 224, 0.18),
+            rgba(72, 68, 211, 0.18));
+
+    border-color:
+        rgba(56, 200, 239, 0.35);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   BOOTSTRAP COLUMN SPACING
+   ========================================================= */
+
+.main-content>.row {
+    --bs-gutter-x: 20px;
+    --bs-gutter-y: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .sidebar {
+        padding:
+            25px 14px !important;
+    }
+
+    .sidebar li {
+        font-size: 14px;
+
+        gap: 10px;
+    }
+
+    .sidebar li i {
+        width: 41px;
+
+        height: 41px;
+
+        min-width: 41px;
+
+        font-size: 17px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .main-content {
+        padding:
+            25px !important;
+    }
+
+}
+
+
+@media (max-width: 991px) {
+
+    .sidebar {
+        min-height: auto;
+
+        position: relative;
+
+        width: 100%;
+
+        padding:
+            18px !important;
+    }
+
+    .sidebar ul {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        gap: 7px;
+    }
+
+    .sidebar li {
+        min-height: 48px;
+
+        flex: 1;
+
+        justify-content: center;
+
+        padding:
+            6px 10px;
+    }
+
+    .sidebar li i {
+        display: none;
+    }
+
+    .sidebar li.active::before {
+        display: none;
+    }
+
+    .logo {
+        padding-bottom: 18px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .main-content {
+        padding:
+            18px !important;
+    }
+
+    .topbar {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 22px;
+    }
+
+    .topbar h2 {
+        font-size: 25px;
+    }
+
+    .profile-img {
+        width: 60px;
+
+        height: 60px;
+    }
+
+    .card-box {
+        min-height: 160px;
+    }
+
+    .dashboard-section {
+        padding:
+            22px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .sidebar ul {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .sidebar li {
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .topbar h2 {
+        font-size: 22px;
+    }
+
+    .topbar p {
+        font-size: 13px;
+    }
+
+    .card-box h3 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        #030b16;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(#0db8df,
+            #5051e5);
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(#1bdaf4,
+            #655cf0);
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    color: #ffffff;
+
+    background:
+        #2457c5;
+}

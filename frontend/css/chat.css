@@ -1,0 +1,315 @@
+/* ==========================================
+   AI Career Guidance
+   AI Chat
+   Same Theme as Admin Dashboard
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #081225;
+    color: white;
+    overflow: hidden;
+}
+
+/* ================= Dashboard ================= */
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar {
+
+    width: 260px;
+
+    background: #10192D;
+
+    padding: 30px 20px;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    bottom: 0;
+
+    border-right: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.sidebar h2 {
+
+    color: #38BDF8;
+
+    font-size: 28px;
+
+    margin-bottom: 40px;
+
+}
+
+.sidebar ul {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+.sidebar li {
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    color: #CBD5E1;
+
+}
+
+.sidebar li i {
+
+    width: 22px;
+
+    margin-right: 10px;
+
+}
+
+.sidebar li:hover {
+
+    background: #2563EB;
+
+    color: white;
+
+    transform: translateX(5px);
+
+}
+
+.sidebar li.active {
+
+    background: linear-gradient(135deg, #2563EB, #4F46E5);
+
+    color: white;
+
+}
+
+/* ================= Main ================= */
+
+.main {
+
+    margin-left: 260px;
+
+    width: calc(100% - 260px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100vh;
+
+}
+
+/* ================= Topbar ================= */
+
+.topbar {
+
+    padding: 25px 35px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+
+    background: #10192D;
+
+}
+
+.topbar h2 {
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+/* ================= Chat ================= */
+
+.chat-box {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+/* ================= Messages ================= */
+
+.message {
+
+    max-width: 70%;
+
+    padding: 16px 20px;
+
+    border-radius: 18px;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    word-wrap: break-word;
+
+}
+
+.user {
+
+    align-self: flex-end;
+
+    background: #2563EB;
+
+    color: white;
+
+}
+
+.bot {
+
+    align-self: flex-start;
+
+    background: #16213E;
+
+    border: 1px solid rgba(255, 255, 255, .05);
+
+}
+
+/* ================= Input ================= */
+
+.chat-input {
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: #10192D;
+
+    border-top: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.chat-input input {
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: #16213E;
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+}
+
+.chat-input input::placeholder {
+
+    color: #94A3B8;
+
+}
+
+.chat-input button {
+
+    width: 60px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #2563EB;
+
+    color: white;
+
+    font-size: 20px;
+
+    transition: .3s;
+
+}
+
+.chat-input button:hover {
+
+    background: #1D4ED8;
+
+}
+
+/* ================= Scrollbar ================= */
+
+.chat-box::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+
+    background: #2563EB;
+
+    border-radius: 10px;
+
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:992px) {
+
+    .sidebar {
+
+        width: 90px;
+
+    }
+
+    .sidebar h2 {
+
+        font-size: 0;
+
+    }
+
+    .main {
+
+        margin-left: 90px;
+
+        width: calc(100% - 90px);
+
+    }
+
+    .message {
+
+        max-width: 90%;
+
+    }
+
+}

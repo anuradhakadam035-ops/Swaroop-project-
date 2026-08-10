@@ -1,0 +1,1083 @@
+/* =========================================================
+   VISIONX — STUDENT MANAGEMENT
+   Fresh Fancy CSS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+
+    color: #eef4ff;
+
+    background:
+        radial-gradient(circle at 10% 10%,
+            rgba(0, 200, 255, 0.12),
+            transparent 30%),
+        radial-gradient(circle at 90% 20%,
+            rgba(91, 76, 255, 0.14),
+            transparent 32%),
+        linear-gradient(135deg,
+            #06111f,
+            #09152a 50%,
+            #0b0d24);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
+
+.dashboard {
+    display: flex;
+
+    min-height: 100vh;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    width: 290px;
+
+    min-width: 290px;
+
+    min-height: 100vh;
+
+    position: sticky;
+
+    top: 0;
+
+    padding: 25px 18px;
+
+    background:
+        linear-gradient(180deg,
+            rgba(7, 25, 44, 0.98),
+            rgba(5, 13, 28, 0.99));
+
+    border-right: 1px solid rgba(95, 132, 190, 0.18);
+
+    box-shadow:
+        10px 0 40px rgba(0, 0, 0, 0.18);
+
+    z-index: 100;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 8px 10px 28px;
+}
+
+.logo i {
+    width: 54px;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: white;
+
+    font-size: 25px;
+
+    background:
+        linear-gradient(135deg,
+            #12c9f3,
+            #4b52ed);
+
+    box-shadow:
+        0 10px 30px rgba(38, 119, 255, 0.32);
+}
+
+.logo span {
+    color: #f6f9ff;
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   SIDEBAR LIST
+   ========================================================= */
+
+.sidebar ul {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   SIDEBAR ITEM
+   ========================================================= */
+
+.sidebar ul li {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 66px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 8px 14px;
+
+    border-radius: 17px;
+
+    color: #c6d2e6;
+
+    font-size: 17px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    border: 1px solid transparent;
+
+    transition:
+        0.25s ease;
+}
+
+
+/* Sidebar icons */
+
+.sidebar ul li i {
+    width: 50px;
+
+    height: 50px;
+
+    min-width: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(135, 165, 210, 0.10);
+
+    color: #f4f8ff;
+
+    font-size: 21px;
+
+    transition: 0.25s ease;
+}
+
+
+/* Sidebar hover */
+
+.sidebar ul li:hover {
+    background:
+        rgba(34, 73, 135, 0.18);
+
+    border-color:
+        rgba(72, 145, 235, 0.18);
+
+    color: #ffffff;
+
+    transform:
+        translateX(3px);
+}
+
+.sidebar ul li:hover i {
+    background:
+        rgba(36, 100, 185, 0.24);
+
+    border-color:
+        rgba(65, 142, 235, 0.25);
+
+    color: #ffffff;
+}
+
+
+/* Active student page */
+
+.sidebar ul li.active {
+    background:
+        rgba(27, 61, 112, 0.28);
+
+    border-color:
+        rgba(68, 139, 232, 0.20);
+
+    color: #ffffff;
+}
+
+.sidebar ul li.active::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 17px;
+
+    width: 4px;
+
+    height: 32px;
+
+    border-radius: 0 5px 5px 0;
+
+    background:
+        linear-gradient(180deg,
+            #12d8ff,
+            #3b82f6);
+
+    box-shadow:
+        0 0 12px rgba(18, 216, 255, 0.65);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 30px 35px 50px;
+}
+
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.topbar {
+    min-height: 125px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 25px 30px;
+
+    margin-bottom: 28px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(120deg,
+            rgba(20, 35, 61, 0.94),
+            rgba(13, 22, 47, 0.88));
+
+    border: 1px solid rgba(100, 135, 190, 0.18);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Main heading */
+
+.topbar h2 {
+    margin: 0;
+
+    color: #f7f9ff;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+}
+
+
+/* Subtitle */
+
+.topbar p {
+    margin-top: 7px;
+
+    color: #8497b5;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   TOP RIGHT
+   ========================================================= */
+
+.top-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search {
+    width: 330px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 18px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(5, 13, 29, 0.72);
+
+    border:
+        1px solid rgba(103, 139, 195, 0.18);
+
+    transition: 0.25s ease;
+}
+
+.search:focus-within {
+    border-color:
+        rgba(34, 211, 238, 0.45);
+
+    box-shadow:
+        0 0 0 4px rgba(34, 211, 238, 0.08);
+}
+
+.search i {
+    color: #6d86a8;
+
+    font-size: 18px;
+}
+
+.search input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #eef5ff;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+.search input::placeholder {
+    color: #667a99;
+}
+
+
+/* =========================================================
+   ADD STUDENT BUTTON
+   ========================================================= */
+
+.add-btn {
+    height: 58px;
+
+    padding: 0 24px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg,
+            #11bfe9,
+            #4b50e9);
+
+    font-size: 15px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(53, 88, 235, 0.25);
+
+    transition: 0.25s ease;
+}
+
+.add-btn i {
+    font-size: 17px;
+}
+
+.add-btn:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 15px 32px rgba(53, 88, 235, 0.35);
+}
+
+
+/* =========================================================
+   TABLE CARD
+   ========================================================= */
+
+.table-card {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 23px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(13, 29, 51, 0.96),
+            rgba(8, 17, 36, 0.96));
+
+    border:
+        1px solid rgba(96, 132, 188, 0.17);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.table-card table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+/* Table header */
+
+.table-card thead {
+    background:
+        rgba(21, 40, 68, 0.62);
+}
+
+.table-card th {
+    padding: 20px 22px;
+
+    color: #8ea2c1;
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    border-bottom:
+        1px solid rgba(100, 133, 183, 0.14);
+
+    white-space: nowrap;
+}
+
+
+/* Table body */
+
+.table-card td {
+    padding: 20px 22px;
+
+    color: #d8e2f1;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    border-bottom:
+        1px solid rgba(95, 126, 175, 0.08);
+}
+
+.table-card tbody tr {
+    transition: 0.2s ease;
+}
+
+.table-card tbody tr:hover {
+    background:
+        rgba(38, 82, 145, 0.12);
+}
+
+
+/* =========================================================
+   STUDENT NAME
+   ========================================================= */
+
+.student {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+.student img {
+    width: 46px;
+
+    height: 46px;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+    border:
+        2px solid rgba(65, 143, 239, 0.25);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.18);
+}
+
+.student span {
+    color: #f0f5ff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.action-btn {
+    width: 42px;
+
+    height: 42px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 5px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid rgba(103, 139, 195, 0.16);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: #8eb5df;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.22s ease;
+}
+
+.action-btn:hover {
+    color: white;
+
+    background:
+        #2563eb;
+
+    border-color:
+        transparent;
+
+    transform:
+        translateY(-2px);
+}
+
+.action-btn.delete:hover {
+    background:
+        #e54663;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.pagination-box {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 24px;
+
+    padding: 25px;
+}
+
+.pagination-box button {
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    border:
+        1px solid rgba(85, 131, 190, 0.17);
+
+    background:
+        rgba(19, 40, 69, 0.70);
+
+    color: #67d8f5;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.22s ease;
+}
+
+.pagination-box button:hover {
+    background:
+        #2056b9;
+
+    color: white;
+
+    transform:
+        translateY(-2px);
+}
+
+#pageInfo {
+    color: #8ca0bd;
+
+    font-size: 14px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal-content {
+    color: #eaf2ff !important;
+
+    background:
+        linear-gradient(135deg,
+            #111e35,
+            #0a1428) !important;
+
+    border:
+        1px solid rgba(94, 132, 190, 0.20) !important;
+
+    border-radius: 22px !important;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.40);
+}
+
+.modal-header {
+    padding: 22px 25px;
+
+    border-bottom:
+        1px solid rgba(95, 129, 181, 0.13) !important;
+}
+
+.modal-title {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 800;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+
+/* Modal labels */
+
+.modal-body label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #a9b9d0;
+
+    font-size: 14px;
+
+    font-weight: 650;
+}
+
+
+/* Modal inputs */
+
+.modal-body .form-control {
+    min-height: 50px;
+
+    color: #edf4ff !important;
+
+    background:
+        #0b172c !important;
+
+    border:
+        1px solid rgba(102, 139, 195, 0.18) !important;
+
+    border-radius: 12px !important;
+
+    font-size: 14px;
+
+    padding: 10px 14px;
+}
+
+.modal-body .form-control:focus {
+    color: #ffffff !important;
+
+    background:
+        #0b172c !important;
+
+    border-color:
+        #22c9ec !important;
+
+    box-shadow:
+        0 0 0 4px rgba(34, 201, 236, 0.08) !important;
+}
+
+.modal-body textarea.form-control {
+    min-height: 100px;
+}
+
+
+/* Save button */
+
+.modal-body .btn-primary {
+    min-height: 52px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(135deg,
+            #0fbfe9,
+            #4258ec);
+
+    font-size: 15px;
+
+    font-weight: 750;
+
+    box-shadow:
+        0 10px 25px rgba(55, 91, 230, 0.22);
+}
+
+.modal-body .btn-primary:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+/* Close button */
+
+.modal-header .btn-close {
+    filter:
+        invert(1) grayscale(1) brightness(2);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .sidebar {
+        width: 245px;
+
+        min-width: 245px;
+    }
+
+    .main-content {
+        padding:
+            25px;
+    }
+
+    .topbar {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .top-right {
+        width: 100%;
+    }
+
+    .search {
+        flex: 1;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+        display: block;
+    }
+
+    .sidebar {
+        width: 80px;
+
+        min-width: 80px;
+
+        position: fixed;
+
+        left: 0;
+
+        top: 0;
+
+        padding:
+            18px 10px;
+    }
+
+    .logo {
+        justify-content: center;
+
+        padding:
+            5px 0 25px;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .logo i {
+        width: 50px;
+
+        height: 50px;
+    }
+
+    .sidebar ul li {
+        justify-content: center;
+
+        padding:
+            7px;
+    }
+
+    .sidebar ul li i {
+        width: 50px;
+
+        height: 50px;
+    }
+
+    .sidebar ul li {
+        font-size: 0;
+    }
+
+    .main-content {
+        margin-left: 80px;
+
+        padding:
+            18px;
+    }
+
+    .top-right {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    .table-card table {
+        min-width: 900px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .main-content {
+        margin-left: 0;
+
+        padding:
+            12px;
+    }
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+
+        min-width: 100%;
+
+        min-height: auto;
+
+        height: auto;
+    }
+
+    .sidebar ul {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .sidebar ul li {
+        font-size: 13px;
+
+        justify-content: flex-start;
+    }
+
+    .sidebar ul li i {
+        width: 40px;
+
+        height: 40px;
+
+        min-width: 40px;
+
+        font-size: 16px;
+    }
+
+    .topbar h2 {
+        font-size: 25px;
+    }
+
+    .topbar p {
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+
+    height: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background:
+        #07111f;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(#1559a5,
+            #3b4ee8);
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(#18c9ee,
+            #5361f0);
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+    color: #ffffff;
+
+    background:
+        #275ee0;
+}

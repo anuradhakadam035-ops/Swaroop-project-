@@ -1,0 +1,4177 @@
+/* =========================================================
+   VISIONX / AI CAREER
+   ADMIN COURSE MANAGEMENT
+   PREMIUM FANCY CSS
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --bg: #040816;
+    --bg2: #071126;
+
+    --panel: rgba(13, 22, 43, .78);
+    --panel2: rgba(17, 28, 54, .72);
+
+    --cyan: #00e5ff;
+    --blue: #3b82f6;
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+
+    --green: #22c55e;
+    --yellow: #f59e0b;
+    --red: #ef4444;
+
+    --white: #f8fafc;
+    --text: #dce6f7;
+    --muted: #7785a2;
+
+    --border: rgba(255, 255, 255, .075);
+
+    --shadow:
+        0 25px 70px rgba(0, 0, 0, .42);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    font-family: "Poppins", sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(circle at 8% 5%,
+            rgba(0, 229, 255, .13),
+            transparent 27%),
+
+        radial-gradient(circle at 92% 8%,
+            rgba(139, 92, 246, .14),
+            transparent 28%),
+
+        radial-gradient(circle at 80% 90%,
+            rgba(236, 72, 153, .07),
+            transparent 30%),
+
+        linear-gradient(135deg,
+            #02040d,
+            #071126 48%,
+            #080b1d);
+
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.grid-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -3;
+
+    pointer-events: none;
+
+    opacity: .20;
+
+    background-image:
+
+        linear-gradient(rgba(255, 255, 255, .025) 1px,
+            transparent 1px),
+
+        linear-gradient(90deg,
+            rgba(255, 255, 255, .025) 1px,
+            transparent 1px);
+
+    background-size: 45px 45px;
+
+    mask-image:
+        linear-gradient(to bottom,
+            black,
+            transparent 85%);
+
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.page-glow {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    filter: blur(55px);
+
+}
+
+
+.glow-one {
+
+    width: 350px;
+    height: 350px;
+
+    left: 20%;
+
+    top: 5%;
+
+    background:
+        rgba(0, 229, 255, .09);
+
+    animation:
+        glowMove 10s ease-in-out infinite;
+
+}
+
+
+.glow-two {
+
+    width: 300px;
+    height: 300px;
+
+    right: 5%;
+
+    bottom: 10%;
+
+    background:
+        rgba(139, 92, 246, .10);
+
+    animation:
+        glowMove2 12s ease-in-out infinite;
+
+}
+
+
+@keyframes glowMove {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(80px, 60px) scale(1.2);
+    }
+
+}
+
+
+@keyframes glowMove2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-60px, -50px);
+    }
+
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.admin-layout {
+
+    min-height: 100vh;
+
+    display: flex;
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 280px;
+
+    height: 100vh;
+
+    padding: 22px 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+
+        linear-gradient(180deg,
+            rgba(8, 18, 39, .96),
+            rgba(4, 9, 24, .98));
+
+    backdrop-filter:
+        blur(25px);
+
+    border-right:
+        1px solid rgba(255, 255, 255, .065);
+
+    box-shadow:
+        18px 0 60px rgba(0, 0, 0, .25);
+
+    z-index: 1000;
+
+}
+
+
+/* =========================================================
+   SIDEBAR LOGO
+========================================================= */
+
+.sidebar-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        5px 10px 28px;
+
+}
+
+
+.logo-icon {
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: white;
+
+    font-size: 22px;
+
+    background:
+
+        linear-gradient(135deg,
+            #00d9ff,
+            #4169e1,
+            #8b5cf6);
+
+    box-shadow:
+
+        0 0 30px rgba(0, 229, 255, .22),
+
+        inset 0 1px 0 rgba(255, 255, 255, .3);
+
+    position: relative;
+
+}
+
+
+.logo-icon::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -3px;
+
+    border-radius: 18px;
+
+    border:
+        1px solid rgba(0, 229, 255, .3);
+
+    animation:
+        logoPulse 2.5s infinite;
+
+}
+
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        opacity: .3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+
+}
+
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.1;
+
+}
+
+
+.logo-text strong {
+
+    font-size: 17px;
+
+    color: white;
+
+}
+
+
+.logo-text span {
+
+    margin-top: 5px;
+
+    color: var(--cyan);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================================
+   SIDEBAR NAV
+========================================================= */
+
+.sidebar-nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    flex: 1;
+
+}
+
+
+.nav-item {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 58px;
+
+    padding: 7px 10px;
+
+    color: #9baac4;
+
+    text-decoration: none;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 17px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.nav-item:hover {
+
+    color: white;
+
+    transform:
+        translateX(4px);
+
+    background:
+        linear-gradient(90deg,
+            rgba(0, 229, 255, .07),
+            rgba(139, 92, 246, .07));
+
+    border-color:
+        rgba(0, 229, 255, .12);
+
+}
+
+
+/* ACTIVE */
+
+.nav-item.active {
+
+    color: white;
+
+    background:
+
+        linear-gradient(100deg,
+            rgba(0, 229, 255, .15),
+            rgba(76, 89, 255, .12),
+            rgba(139, 92, 246, .12));
+
+    border-color:
+        rgba(0, 229, 255, .18);
+
+    box-shadow:
+        inset 0 0 30px rgba(0, 229, 255, .025),
+
+        0 10px 30px rgba(0, 0, 0, .15);
+
+}
+
+
+.nav-item.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -15px;
+
+    top: 12px;
+    bottom: 12px;
+
+    width: 4px;
+
+    border-radius:
+        0 5px 5px 0;
+
+    background:
+
+        linear-gradient(#00e5ff,
+            #8b5cf6);
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, .7);
+
+}
+
+
+/* ICON */
+
+.nav-icon {
+
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: #7e8ca8;
+
+    font-size: 16px;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid rgba(255, 255, 255, .05);
+
+    transition: .3s;
+
+}
+
+
+.nav-item:hover .nav-icon,
+.nav-item.active .nav-icon {
+
+    color: white;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(0, 229, 255, .20),
+            rgba(99, 102, 241, .22));
+
+    box-shadow:
+        0 0 18px rgba(0, 229, 255, .09);
+
+}
+
+
+.nav-text {
+
+    flex: 1;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.nav-arrow {
+
+    font-size: 9px;
+
+    opacity: .35;
+
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .06);
+
+}
+
+
+/* =========================================================
+   ADMIN PROFILE
+========================================================= */
+
+.admin-profile {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px;
+
+    margin-bottom: 9px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid rgba(255, 255, 255, .06);
+
+}
+
+
+.admin-avatar {
+
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: white;
+
+    background:
+
+        linear-gradient(135deg,
+            #00cfee,
+            #6366f1);
+
+}
+
+
+.admin-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+}
+
+
+.admin-info strong {
+
+    color: white;
+
+    font-size: 10px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.admin-info span {
+
+    margin-top: 2px;
+
+    color: #64728d;
+
+    font-size: 8px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+.online-dot {
+
+    width: 7px;
+    height: 7px;
+
+    margin-left: auto;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 10px rgba(34, 197, 94, .7);
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-btn {
+
+    width: 100%;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border-radius: 13px;
+
+    border:
+        1px solid rgba(239, 68, 68, .09);
+
+    color: #fb7185;
+
+    background:
+        rgba(239, 68, 68, .035);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.logout-btn:hover {
+
+    color: #ff9ba8;
+
+    background:
+        rgba(239, 68, 68, .09);
+
+    border-color:
+        rgba(239, 68, 68, .20);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main-content {
+
+    width:
+        calc(100% - 280px);
+
+    margin-left: 280px;
+
+    padding:
+        25px 32px 50px;
+
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+
+    min-height: 105px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        20px 24px;
+
+    border-radius: 23px;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(18, 29, 54, .82),
+            rgba(10, 17, 37, .72));
+
+    backdrop-filter:
+        blur(25px);
+
+    border:
+        1px solid rgba(255, 255, 255, .075);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.page-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.heading-icon {
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 17px;
+
+    color: #4eeaff;
+
+    font-size: 21px;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(0, 229, 255, .14),
+            rgba(99, 102, 241, .16));
+
+    border:
+        1px solid rgba(0, 229, 255, .12);
+
+    box-shadow:
+        0 0 25px rgba(0, 229, 255, .06);
+
+}
+
+
+.page-heading h1 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+}
+
+
+.page-heading p {
+
+    margin:
+        5px 0 0;
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   TOP ACTIONS
+========================================================= */
+
+.top-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+
+    position: relative;
+
+    width: 270px;
+
+}
+
+
+.search-box i {
+
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color: #687691;
+
+    font-size: 12px;
+
+    pointer-events: none;
+
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding:
+        0 15px 0 42px;
+
+    outline: none;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(5, 12, 28, .70);
+
+    border:
+        1px solid rgba(255, 255, 255, .07);
+
+    transition: .3s;
+
+}
+
+
+.search-box input::placeholder {
+
+    color: #52617b;
+
+}
+
+
+.search-box input:focus {
+
+    border-color:
+        rgba(0, 229, 255, .35);
+
+    box-shadow:
+
+        0 0 0 3px rgba(0, 229, 255, .05),
+
+        0 0 25px rgba(0, 229, 255, .05);
+
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.add-course-btn {
+
+    position: relative;
+
+    height: 48px;
+
+    padding:
+        0 19px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    overflow: hidden;
+
+    border: none;
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    background:
+
+        linear-gradient(135deg,
+            #00bfe8,
+            #4b63e7,
+            #8050e8);
+
+    box-shadow:
+
+        0 10px 30px rgba(59, 130, 246, .20);
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.add-course-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 60px;
+    height: 150px;
+
+    left: -90px;
+
+    top: -50px;
+
+    transform:
+        rotate(25deg);
+
+    background:
+        rgba(255, 255, 255, .25);
+
+    transition:
+        .55s;
+
+}
+
+
+.add-course-btn:hover::before {
+
+    left: 130%;
+
+}
+
+
+.add-course-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+
+        0 15px 40px rgba(59, 130, 246, .35);
+
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-top: 20px;
+
+}
+
+
+.stat-card {
+
+    position: relative;
+
+    min-height: 108px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 18px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(17, 29, 54, .80),
+            rgba(9, 16, 35, .76));
+
+    backdrop-filter:
+        blur(20px);
+
+    border:
+        1px solid rgba(255, 255, 255, .065);
+
+    box-shadow:
+
+        0 15px 40px rgba(0, 0, 0, .20);
+
+    transition:
+        .35s ease;
+
+}
+
+
+.stat-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -50px;
+    top: -50px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 229, 255, .06);
+
+    filter:
+        blur(15px);
+
+}
+
+
+.stat-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(0, 229, 255, .15);
+
+    box-shadow:
+
+        0 20px 50px rgba(0, 0, 0, .32),
+
+        0 0 25px rgba(0, 229, 255, .04);
+
+}
+
+
+.stat-icon {
+
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 18px;
+
+}
+
+
+.stat-icon.blue {
+
+    color: #46b7ff;
+
+    background:
+        rgba(59, 130, 246, .12);
+
+}
+
+
+.stat-icon.cyan {
+
+    color: #28e5ff;
+
+    background:
+        rgba(0, 229, 255, .10);
+
+}
+
+
+.stat-icon.purple {
+
+    color: #ae8aff;
+
+    background:
+        rgba(139, 92, 246, .12);
+
+}
+
+
+.stat-icon.green {
+
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, .10);
+
+}
+
+
+.stat-content span {
+
+    color: #72809a;
+
+    font-size: 9px;
+
+}
+
+
+.stat-content h2 {
+
+    margin:
+        4px 0 0;
+
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+}
+
+
+.stat-content small {
+
+    display: block;
+
+    margin-top: 1px;
+
+    color: #4f5e78;
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.course-table-card {
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    border-radius: 23px;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(15, 25, 47, .84),
+            rgba(8, 14, 31, .80));
+
+    backdrop-filter:
+        blur(25px);
+
+    border:
+        1px solid rgba(255, 255, 255, .07);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.table-header {
+
+    min-height: 78px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        16px 22px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .055);
+
+}
+
+
+.table-header h2 {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.table-header h2 i {
+
+    margin-right: 7px;
+
+    color: var(--cyan);
+
+}
+
+
+.table-header p {
+
+    margin:
+        4px 0 0;
+
+    color: #5f6d87;
+
+    font-size: 8px;
+
+}
+
+
+.course-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding:
+        7px 11px;
+
+    border-radius: 30px;
+
+    color: #6b7b98;
+
+    font-size: 8px;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid rgba(255, 255, 255, .055);
+
+}
+
+
+.status-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 9px rgba(34, 197, 94, .8);
+
+}
+
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.table-wrapper {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+.table-wrapper::-webkit-scrollbar {
+
+    height: 5px;
+
+}
+
+
+.table-wrapper::-webkit-scrollbar-track {
+
+    background:
+        rgba(255, 255, 255, .02);
+
+}
+
+
+.table-wrapper::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(90deg,
+            var(--cyan),
+            var(--purple));
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.course-table {
+
+    width: 100%;
+
+    min-width: 900px;
+
+    border-collapse: collapse;
+
+}
+
+
+.course-table thead {
+
+    background:
+        rgba(0, 229, 255, .025);
+
+}
+
+
+.course-table th {
+
+    padding:
+        15px 16px;
+
+    color: #61708c;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-align: left;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .055);
+
+}
+
+
+.course-table td {
+
+    padding:
+        13px 16px;
+
+    color: #bdc9dc;
+
+    font-size: 10px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .04);
+
+}
+
+
+.course-table tbody tr {
+
+    transition: .25s;
+
+}
+
+
+.course-table tbody tr:hover {
+
+    background:
+
+        linear-gradient(90deg,
+            rgba(0, 229, 255, .035),
+            rgba(139, 92, 246, .025));
+
+}
+
+
+/* =========================================================
+   COURSE NAME
+========================================================= */
+
+.course-name {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.course-icon {
+
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #40e5ff;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(0, 229, 255, .10),
+            rgba(99, 102, 241, .13));
+
+    border:
+        1px solid rgba(0, 229, 255, .08);
+
+}
+
+
+.course-name span {
+
+    color: #e6eefb;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.badge-custom {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        5px 9px;
+
+    border-radius: 30px;
+
+    color: #4fe2ff;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+    background:
+        rgba(0, 229, 255, .07);
+
+    border:
+        1px solid rgba(0, 229, 255, .09);
+
+}
+
+
+/* =========================================================
+   LEVEL
+========================================================= */
+
+.level-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        5px 9px;
+
+    border-radius: 30px;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+}
+
+
+.level-beginner {
+
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, .08);
+
+    border:
+        1px solid rgba(34, 197, 94, .12);
+
+}
+
+
+.level-intermediate {
+
+    color: #fbbf24;
+
+    background:
+        rgba(245, 158, 11, .08);
+
+    border:
+        1px solid rgba(245, 158, 11, .12);
+
+}
+
+
+.level-advanced {
+
+    color: #fb7185;
+
+    background:
+        rgba(239, 68, 68, .08);
+
+    border:
+        1px solid rgba(239, 68, 68, .12);
+
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-btn {
+
+    width: 32px;
+    height: 32px;
+
+    margin-right: 4px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    color: #6e7d98;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid rgba(255, 255, 255, .055);
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.action-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.action-view:hover {
+
+    color: #22d3ee;
+
+    border-color:
+        rgba(34, 211, 238, .35);
+
+    background:
+        rgba(34, 211, 238, .08);
+
+    box-shadow:
+        0 0 15px rgba(34, 211, 238, .12);
+
+}
+
+
+.action-edit:hover {
+
+    color: #a78bfa;
+
+    border-color:
+        rgba(167, 139, 250, .35);
+
+    background:
+        rgba(167, 139, 250, .08);
+
+    box-shadow:
+        0 0 15px rgba(167, 139, 250, .12);
+
+}
+
+
+.action-delete:hover {
+
+    color: #fb7185;
+
+    border-color:
+        rgba(251, 113, 133, .35);
+
+    background:
+        rgba(251, 113, 133, .08);
+
+    box-shadow:
+        0 0 15px rgba(251, 113, 133, .12);
+
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination-box {
+
+    min-height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .045);
+
+}
+
+
+.pagination-box span {
+
+    min-width: 100px;
+
+    text-align: center;
+
+    color: #697791;
+
+    font-size: 9px;
+
+}
+
+
+.pagination-btn {
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #6edfff;
+
+    border-radius: 10px;
+
+    border:
+        1px solid rgba(255, 255, 255, .06);
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.pagination-btn:hover:not(:disabled) {
+
+    color: white;
+
+    background:
+        rgba(0, 229, 255, .08);
+
+    border-color:
+        rgba(0, 229, 255, .25);
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, .10);
+
+}
+
+
+.pagination-btn:disabled {
+
+    opacity: .25;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   MODAL BACKDROP
+========================================================= */
+
+.modal-backdrop.show {
+
+    opacity: .80;
+
+    backdrop-filter:
+        blur(8px);
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.fancy-modal {
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+
+    border-radius: 25px !important;
+
+    border:
+        1px solid rgba(255, 255, 255, .09) !important;
+
+    background:
+
+        linear-gradient(135deg,
+            rgba(18, 29, 54, .98),
+            rgba(7, 14, 31, .98)) !important;
+
+    box-shadow:
+
+        0 40px 100px rgba(0, 0, 0, .65),
+
+        0 0 60px rgba(0, 229, 255, .05);
+
+}
+
+
+.fancy-modal::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    right: -120px;
+    top: -120px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 229, 255, .10);
+
+    filter: blur(45px);
+
+}
+
+
+.fancy-modal::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    left: -100px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(139, 92, 246, .10);
+
+    filter: blur(50px);
+
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.fancy-modal .modal-header {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        18px 22px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .06);
+
+    background:
+        rgba(255, 255, 255, .015);
+
+}
+
+
+.modal-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.modal-icon {
+
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    color: var(--cyan);
+
+    background:
+        rgba(0, 229, 255, .08);
+
+    border:
+        1px solid rgba(0, 229, 255, .10);
+
+}
+
+
+.modal-title {
+
+    margin: 0;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+}
+
+
+.modal-title i {
+
+    color: var(--cyan);
+
+    margin-right: 6px;
+
+}
+
+
+.modal-heading small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #61708a;
+
+    font-size: 8px;
+
+}
+
+
+.modal-close {
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    color: #78869f;
+
+    background:
+        rgba(255, 255, 255, .035);
+
+    border:
+        1px solid rgba(255, 255, 255, .06);
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+
+.modal-close:hover {
+
+    color: white;
+
+    background:
+        rgba(239, 68, 68, .10);
+
+    border-color:
+        rgba(239, 68, 68, .20);
+
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.fancy-modal .modal-body {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        23px;
+
+}
+
+
+/* =========================================================
+   FORM LABEL
+========================================================= */
+
+.fancy-modal label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #aab8d0;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+}
+
+
+.fancy-modal label i {
+
+    margin-right: 5px;
+
+    color: var(--cyan);
+
+}
+
+
+/* =========================================================
+   FORM INPUT
+========================================================= */
+
+.fancy-input {
+
+    min-height: 45px;
+
+    color: white !important;
+
+    background:
+        rgba(4, 11, 26, .75) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, .075) !important;
+
+    border-radius: 12px !important;
+
+    font-family: inherit !important;
+
+    font-size: 10px !important;
+
+    transition: .25s !important;
+
+}
+
+
+.fancy-input::placeholder {
+
+    color: #4f5d76 !important;
+
+}
+
+
+.fancy-input:focus {
+
+    color: white !important;
+
+    background:
+        rgba(4, 11, 26, .95) !important;
+
+    border-color:
+        rgba(0, 229, 255, .38) !important;
+
+    box-shadow:
+
+        0 0 0 3px rgba(0, 229, 255, .05),
+
+        0 0 25px rgba(0, 229, 255, .04) !important;
+
+}
+
+
+.fancy-input option {
+
+    color: white;
+
+    background: #10182e;
+
+}
+
+
+.description-input {
+
+    min-height: 115px;
+
+    resize: vertical;
+
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.save-course-btn {
+
+    width: 100%;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    background:
+
+        linear-gradient(135deg,
+            #00c8ec,
+            #4c5eea,
+            #8b5cf6);
+
+    box-shadow:
+
+        0 10px 30px rgba(59, 130, 246, .22);
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.save-course-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+
+        0 15px 40px rgba(59, 130, 246, .35);
+
+}
+
+
+.save-course-btn:disabled {
+
+    opacity: .6;
+
+    cursor: wait;
+
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+
+    padding:
+        70px 20px !important;
+
+    text-align: center !important;
+
+}
+
+
+.empty-state i {
+
+    width: 65px;
+    height: 65px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 20px;
+
+    color: var(--cyan);
+
+    font-size: 25px;
+
+    background:
+        rgba(0, 229, 255, .07);
+
+    box-shadow:
+        0 0 30px rgba(0, 229, 255, .05);
+
+}
+
+
+.empty-state h3 {
+
+    color: white;
+
+    font-size: 15px;
+
+}
+
+
+.empty-state p {
+
+    margin-top: 5px;
+
+    color: #5e6c85;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-row {
+
+    padding:
+        60px !important;
+
+    text-align: center !important;
+
+    color: #687690 !important;
+
+}
+
+
+.loading-row i {
+
+    margin-right: 8px;
+
+    color: var(--cyan);
+
+}
+
+
+/* =========================================================
+   BOOTSTRAP OVERRIDES
+========================================================= */
+
+.modal-content {
+
+    color: white;
+
+}
+
+
+.btn-close {
+
+    filter:
+        invert(1);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1200px) {
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media(max-width:950px) {
+
+    .sidebar {
+
+        width: 82px;
+
+    }
+
+    .sidebar-logo {
+
+        justify-content: center;
+
+        padding-left: 0;
+        padding-right: 0;
+
+    }
+
+    .logo-text {
+
+        display: none;
+
+    }
+
+    .nav-text,
+    .nav-arrow {
+
+        display: none;
+
+    }
+
+    .nav-item {
+
+        justify-content: center;
+
+    }
+
+    .sidebar-bottom {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .admin-profile {
+
+        justify-content: center;
+
+    }
+
+    .admin-info,
+    .online-dot {
+
+        display: none;
+
+    }
+
+    .logout-btn span {
+
+        display: none;
+
+    }
+
+    .logout-btn {
+
+        width: 45px;
+
+    }
+
+    .main-content {
+
+        width:
+            calc(100% - 82px);
+
+        margin-left: 82px;
+
+        padding:
+            20px;
+
+    }
+
+}
+
+
+@media(max-width:700px) {
+
+    .topbar {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .top-actions {
+
+        width: 100%;
+
+        flex-direction: column;
+
+    }
+
+    .search-box {
+
+        width: 100%;
+
+    }
+
+    .add-course-btn {
+
+        width: 100%;
+
+    }
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .table-header {
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+    }
+
+}
+
+
+@media(max-width:500px) {
+
+    .main-content {
+
+        padding:
+            12px;
+
+    }
+
+    .page-heading h1 {
+
+        font-size: 18px;
+
+    }
+
+    .heading-icon {
+
+        width: 45px;
+        height: 45px;
+
+    }
+
+    .course-status {
+
+        display: none;
+
+    }
+
+}
+
+/* =========================================================
+   COURSE LINK
+========================================================= */
+
+.link-input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.link-prefix {
+
+    position: absolute;
+
+    left: 13px;
+
+    z-index: 5;
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    color: #35ddff;
+
+    background:
+        rgba(0, 229, 255, .08);
+
+    border:
+        1px solid rgba(0, 229, 255, .10);
+
+    font-size: 11px;
+
+}
+
+
+.course-link-input {
+
+    padding-left: 52px !important;
+
+}
+
+
+.input-help {
+
+    margin-top: 7px;
+
+    color: #566681;
+
+    font-size: 8px;
+
+}
+
+
+.input-help i {
+
+    margin-right: 4px;
+
+    color: #00d9ff;
+
+}
+
+
+/* =========================================================
+   COURSE LINK TABLE BUTTON
+========================================================= */
+
+.course-link-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 10px;
+
+    border-radius: 9px;
+
+    color: #38e8ff;
+
+    background:
+        rgba(0, 229, 255, .07);
+
+    border:
+        1px solid rgba(0, 229, 255, .12);
+
+    text-decoration: none;
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    transition: .25s;
+
+}
+
+
+.course-link-btn:hover {
+
+    color: white;
+
+    background:
+        rgba(0, 229, 255, .15);
+
+    border-color:
+        rgba(0, 229, 255, .35);
+
+    box-shadow:
+        0 0 18px rgba(0, 229, 255, .12);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.no-course-link {
+
+    color: #4f5d75;
+
+    font-size: 8px;
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   LINK COUNT ICON
+========================================================= */
+
+.stat-icon.green {
+
+    color: #4ade80;
+
+    background:
+        rgba(34, 197, 94, .10);
+
+    border:
+        1px solid rgba(34, 197, 94, .08);
+
+}
+
+
+/* =========================================================
+   URL VALIDATION
+========================================================= */
+
+.course-link-input:valid:not(:placeholder-shown) {
+
+    border-color:
+        rgba(34, 197, 94, .25) !important;
+
+}
+
+
+.course-link-input:invalid:not(:placeholder-shown) {
+
+    border-color:
+        rgba(239, 68, 68, .30) !important;
+
+}
+
+/* =========================================================
+   VISIONX SIDEBAR - FINAL LARGE & PROPER ALIGNMENT
+   Put this at the VERY BOTTOM of admin_courses.css
+========================================================= */
+
+/* ---------- SIDEBAR ---------- */
+
+.sidebar {
+    width: 300px !important;
+    min-width: 300px !important;
+
+    padding: 28px 20px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    background:
+        linear-gradient(180deg,
+            #07172d 0%,
+            #061126 45%,
+            #050b1d 100%) !important;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+
+    box-shadow:
+        15px 0 50px rgba(0, 0, 0, 0.30) !important;
+
+    z-index: 1000 !important;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.sidebar-logo {
+    width: 100% !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    gap: 15px !important;
+
+    padding: 5px 8px 35px !important;
+
+    text-decoration: none !important;
+}
+
+.logo-icon {
+    width: 58px !important;
+    height: 58px !important;
+
+    min-width: 58px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 17px !important;
+
+    font-size: 27px !important;
+
+    color: white !important;
+
+    background:
+        linear-gradient(135deg,
+            #00d9ff,
+            #4169e1,
+            #8b5cf6) !important;
+
+    box-shadow:
+        0 0 30px rgba(0, 229, 255, 0.25) !important;
+}
+
+.logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+
+    line-height: 1.15 !important;
+}
+
+.logo-text strong {
+    color: #ffffff !important;
+
+    font-size: 22px !important;
+
+    font-weight: 800 !important;
+
+    white-space: nowrap !important;
+}
+
+.logo-text span {
+    margin-top: 5px !important;
+
+    color: #00e5ff !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700 !important;
+
+    letter-spacing: 2.5px !important;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+    width: 100% !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    gap: 9px !important;
+
+    flex: 1 !important;
+}
+
+.nav-item {
+    position: relative !important;
+
+    width: 100% !important;
+    min-height: 64px !important;
+
+    padding: 8px 13px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 15px !important;
+
+    color: #aebbd2 !important;
+
+    text-decoration: none !important;
+
+    border: 1px solid transparent !important;
+
+    border-radius: 17px !important;
+
+    transition: all 0.25s ease !important;
+}
+
+
+/* REMOVE DEFAULT BLUE UNDERLINE */
+
+.sidebar a,
+.nav-item,
+.nav-item:visited,
+.nav-item:hover,
+.nav-item:active {
+    text-decoration: none !important;
+}
+
+
+/* HOVER */
+
+.nav-item:hover {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(90deg,
+            rgba(0, 229, 255, 0.10),
+            rgba(91, 76, 255, 0.12)) !important;
+
+    border-color:
+        rgba(0, 229, 255, 0.20) !important;
+
+    transform: translateX(3px) !important;
+}
+
+
+/* ACTIVE */
+
+.nav-item.active {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(100deg,
+            rgba(0, 229, 255, 0.18),
+            rgba(72, 85, 220, 0.18),
+            rgba(139, 92, 246, 0.18)) !important;
+
+    border-color:
+        rgba(0, 229, 255, 0.25) !important;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20),
+        inset 0 0 25px rgba(0, 229, 255, 0.025) !important;
+}
+
+
+/* ACTIVE LEFT LINE */
+
+.nav-item.active::before {
+    content: "" !important;
+
+    position: absolute !important;
+
+    left: -20px !important;
+
+    top: 10px !important;
+    bottom: 10px !important;
+
+    width: 5px !important;
+
+    border-radius: 0 6px 6px 0 !important;
+
+    background:
+        linear-gradient(#00e5ff,
+            #6366f1) !important;
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.8) !important;
+}
+
+
+/* =========================================================
+   NAV ICON
+========================================================= */
+
+.nav-icon {
+    width: 46px !important;
+    height: 46px !important;
+
+    min-width: 46px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 14px !important;
+
+    color: #91a1bd !important;
+
+    background:
+        rgba(255, 255, 255, 0.045) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06) !important;
+
+    font-size: 19px !important;
+}
+
+.nav-item:hover .nav-icon,
+.nav-item.active .nav-icon {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(135deg,
+            #0dbedb,
+            #4f46e5) !important;
+
+    box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.18) !important;
+}
+
+
+/* =========================================================
+   NAV TEXT
+========================================================= */
+
+.nav-text {
+    flex: 1 !important;
+
+    color: inherit !important;
+
+    font-size: 16px !important;
+
+    font-weight: 650 !important;
+
+    letter-spacing: 0.1px !important;
+
+    white-space: nowrap !important;
+}
+
+.nav-arrow {
+    color: #7890b4 !important;
+
+    font-size: 14px !important;
+
+    opacity: 0.8 !important;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+    width: 100% !important;
+
+    padding-top: 20px !important;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* =========================================================
+   ADMIN PROFILE
+========================================================= */
+
+.admin-profile {
+    width: 100% !important;
+
+    min-height: 68px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 13px !important;
+
+    padding: 10px 12px !important;
+
+    margin-bottom: 12px !important;
+
+    border-radius: 16px !important;
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.025)) !important;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+
+.admin-avatar {
+    width: 45px !important;
+    height: 45px !important;
+
+    min-width: 45px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 13px !important;
+
+    color: white !important;
+
+    background:
+        linear-gradient(135deg,
+            #00cfee,
+            #6366f1) !important;
+
+    font-size: 19px !important;
+}
+
+
+.admin-info {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    min-width: 0 !important;
+
+    flex: 1 !important;
+}
+
+
+.admin-info strong {
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    white-space: nowrap !important;
+
+    overflow: hidden !important;
+
+    text-overflow: ellipsis !important;
+}
+
+
+.admin-info span {
+    margin-top: 3px !important;
+
+    color: #8292ae !important;
+
+    font-size: 11px !important;
+
+    white-space: nowrap !important;
+
+    overflow: hidden !important;
+
+    text-overflow: ellipsis !important;
+}
+
+
+.online-dot {
+    width: 9px !important;
+    height: 9px !important;
+
+    min-width: 9px !important;
+
+    border-radius: 50% !important;
+
+    background: #22c55e !important;
+
+    box-shadow:
+        0 0 12px rgba(34, 197, 94, 0.8) !important;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-btn {
+    width: 100% !important;
+
+    height: 52px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 10px !important;
+
+    border-radius: 14px !important;
+
+    border:
+        1px solid rgba(239, 68, 68, 0.15) !important;
+
+    color: #fb7185 !important;
+
+    background:
+        rgba(239, 68, 68, 0.045) !important;
+
+    font-family: inherit !important;
+
+    font-size: 14px !important;
+
+    font-weight: 600 !important;
+
+    cursor: pointer !important;
+
+    transition: all 0.25s ease !important;
+}
+
+
+.logout-btn:hover {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(135deg,
+            rgba(239, 68, 68, 0.20),
+            rgba(190, 40, 70, 0.15)) !important;
+
+    border-color:
+        rgba(239, 68, 68, 0.35) !important;
+
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+        0 10px 25px rgba(239, 68, 68, 0.12) !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+    width: calc(100% - 300px) !important;
+
+    margin-left: 300px !important;
+
+    min-height: 100vh !important;
+
+    padding: 30px 35px 50px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 85px !important;
+        min-width: 85px !important;
+
+        padding: 22px 12px !important;
+    }
+
+    .main-content {
+        width: calc(100% - 85px) !important;
+
+        margin-left: 85px !important;
+    }
+
+    .logo-text,
+    .nav-text,
+    .nav-arrow,
+    .admin-info,
+    .online-dot {
+        display: none !important;
+    }
+
+    .sidebar-logo {
+        justify-content: center !important;
+    }
+
+    .nav-item {
+        justify-content: center !important;
+
+        padding: 8px !important;
+    }
+
+    .nav-icon {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .admin-profile {
+        justify-content: center !important;
+        padding: 8px !important;
+    }
+
+    .logout-btn {
+        width: 50px !important;
+        margin: auto !important;
+    }
+
+    .logout-btn span {
+        display: none !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        display: none !important;
+    }
+
+    .main-content {
+        width: 100% !important;
+
+        margin-left: 0 !important;
+
+        padding: 18px !important;
+    }
+}
+
+/* =========================================================
+   ADMIN COURSES - LARGE & BOLD UI OVERRIDE
+   ADD THIS AT THE VERY BOTTOM OF admin_courses.css
+========================================================= */
+
+/* =========================================================
+   GLOBAL FONT
+========================================================= */
+
+body {
+    font-family: "Poppins", "Inter", sans-serif !important;
+    font-size: 15px !important;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+    padding: 35px 40px 60px !important;
+}
+
+
+/* =========================================================
+   COURSE MANAGEMENT HEADER
+========================================================= */
+
+.topbar {
+    min-height: 120px !important;
+    padding: 25px 30px !important;
+    border-radius: 25px !important;
+}
+
+.page-heading {
+    gap: 18px !important;
+}
+
+.heading-icon {
+    width: 66px !important;
+    height: 66px !important;
+
+    min-width: 66px !important;
+
+    border-radius: 19px !important;
+
+    font-size: 28px !important;
+}
+
+.page-heading h1 {
+    font-size: 30px !important;
+    font-weight: 800 !important;
+
+    letter-spacing: -0.5px !important;
+}
+
+.page-heading p {
+    margin-top: 7px !important;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    color: #8fa1bd !important;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box {
+    width: 340px !important;
+}
+
+.search-box input {
+    height: 58px !important;
+
+    padding-left: 50px !important;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    border-radius: 16px !important;
+}
+
+.search-box i {
+    left: 18px !important;
+
+    font-size: 17px !important;
+}
+
+
+/* =========================================================
+   ADD COURSE BUTTON
+========================================================= */
+
+.add-course-btn {
+    height: 58px !important;
+
+    padding: 0 25px !important;
+
+    gap: 10px !important;
+
+    border-radius: 16px !important;
+
+    font-size: 15px !important;
+    font-weight: 700 !important;
+}
+
+.add-course-btn i {
+    font-size: 17px !important;
+}
+
+
+/* =========================================================
+   STATISTICS CARDS
+========================================================= */
+
+.stats-grid {
+    gap: 20px !important;
+
+    margin-top: 25px !important;
+}
+
+.stat-card {
+    min-height: 135px !important;
+
+    padding: 24px !important;
+
+    gap: 18px !important;
+
+    border-radius: 22px !important;
+}
+
+.stat-icon {
+    width: 62px !important;
+    height: 62px !important;
+
+    min-width: 62px !important;
+
+    border-radius: 17px !important;
+
+    font-size: 24px !important;
+}
+
+.stat-content span {
+    font-size: 13px !important;
+
+    font-weight: 600 !important;
+
+    color: #8b9ab5 !important;
+}
+
+.stat-content h2 {
+    margin-top: 5px !important;
+
+    font-size: 30px !important;
+
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+}
+
+.stat-content small {
+    margin-top: 3px !important;
+
+    font-size: 11px !important;
+
+    font-weight: 500 !important;
+}
+
+
+/* =========================================================
+   COURSE TABLE CARD
+========================================================= */
+
+.course-table-card {
+    margin-top: 25px !important;
+
+    border-radius: 25px !important;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.table-header {
+    min-height: 95px !important;
+
+    padding: 22px 28px !important;
+}
+
+.table-header h2 {
+    font-size: 19px !important;
+
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+}
+
+.table-header h2 i {
+    margin-right: 9px !important;
+
+    font-size: 18px !important;
+}
+
+.table-header p {
+    margin-top: 6px !important;
+
+    font-size: 12px !important;
+
+    font-weight: 500 !important;
+
+    color: #7f90ac !important;
+}
+
+
+/* =========================================================
+   LIVE DATABASE
+========================================================= */
+
+.course-status {
+    padding: 9px 15px !important;
+
+    gap: 8px !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600 !important;
+
+    border-radius: 30px !important;
+}
+
+.status-dot {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.course-table {
+    min-width: 1050px !important;
+}
+
+.course-table th {
+    padding: 19px 20px !important;
+
+    font-size: 12px !important;
+
+    font-weight: 800 !important;
+
+    letter-spacing: 1.2px !important;
+
+    color: #8293af !important;
+}
+
+.course-table td {
+    padding: 18px 20px !important;
+
+    font-size: 14px !important;
+
+    font-weight: 500 !important;
+
+    color: #d6e0f0 !important;
+}
+
+
+/* =========================================================
+   COURSE NAME
+========================================================= */
+
+.course-name {
+    gap: 13px !important;
+}
+
+.course-icon {
+    width: 46px !important;
+    height: 46px !important;
+
+    min-width: 46px !important;
+
+    border-radius: 13px !important;
+
+    font-size: 19px !important;
+}
+
+.course-name span {
+    font-size: 14px !important;
+
+    font-weight: 700 !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   CATEGORY BADGE
+========================================================= */
+
+.badge-custom {
+    padding: 7px 12px !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700 !important;
+
+    border-radius: 30px !important;
+}
+
+
+/* =========================================================
+   LEVEL BADGE
+========================================================= */
+
+.level-badge {
+    padding: 7px 12px !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700 !important;
+
+    border-radius: 30px !important;
+}
+
+
+/* =========================================================
+   COURSE LINK
+========================================================= */
+
+.course-link-btn {
+    padding: 8px 13px !important;
+
+    gap: 7px !important;
+
+    border-radius: 10px !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700 !important;
+}
+
+.course-link-btn i {
+    font-size: 12px !important;
+}
+
+.no-course-link {
+    font-size: 11px !important;
+
+    font-weight: 500 !important;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-btn {
+    width: 40px !important;
+    height: 40px !important;
+
+    margin-right: 6px !important;
+
+    border-radius: 11px !important;
+
+    font-size: 15px !important;
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination-box {
+    min-height: 75px !important;
+
+    gap: 16px !important;
+}
+
+.pagination-box span {
+    min-width: 120px !important;
+
+    font-size: 12px !important;
+
+    font-weight: 600 !important;
+}
+
+.pagination-btn {
+    width: 42px !important;
+    height: 42px !important;
+
+    border-radius: 11px !important;
+
+    font-size: 15px !important;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-state {
+    min-height: 330px !important;
+
+    padding: 75px 25px !important;
+}
+
+.empty-state i {
+    width: 82px !important;
+    height: 82px !important;
+
+    margin-bottom: 20px !important;
+
+    border-radius: 23px !important;
+
+    font-size: 32px !important;
+}
+
+.empty-state h3 {
+    margin-top: 5px !important;
+
+    font-size: 21px !important;
+
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+}
+
+.empty-state p {
+    margin-top: 8px !important;
+
+    font-size: 13px !important;
+
+    font-weight: 500 !important;
+
+    color: #71819d !important;
+}
+
+
+/* =========================================================
+   MODAL - LARGE TEXT
+========================================================= */
+
+.fancy-modal .modal-header {
+    padding: 23px 27px !important;
+}
+
+.modal-icon {
+    width: 50px !important;
+    height: 50px !important;
+
+    border-radius: 15px !important;
+
+    font-size: 20px !important;
+}
+
+.modal-title {
+    font-size: 20px !important;
+
+    font-weight: 800 !important;
+}
+
+.modal-heading small {
+    font-size: 11px !important;
+
+    font-weight: 500 !important;
+}
+
+.fancy-modal .modal-body {
+    padding: 28px !important;
+}
+
+.fancy-modal label {
+    margin-bottom: 8px !important;
+
+    font-size: 13px !important;
+
+    font-weight: 700 !important;
+}
+
+.fancy-input {
+    min-height: 52px !important;
+
+    padding: 10px 15px !important;
+
+    font-size: 14px !important;
+
+    font-weight: 500 !important;
+
+    border-radius: 14px !important;
+}
+
+.description-input {
+    min-height: 140px !important;
+}
+
+.save-course-btn {
+    height: 56px !important;
+
+    font-size: 15px !important;
+
+    font-weight: 700 !important;
+
+    border-radius: 15px !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .page-heading h1 {
+        font-size: 26px !important;
+    }
+
+    .search-box {
+        width: 280px !important;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .main-content {
+        padding: 25px !important;
+    }
+
+    .page-heading h1 {
+        font-size: 23px !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .main-content {
+        padding: 15px !important;
+    }
+
+    .topbar {
+        padding: 20px !important;
+    }
+
+    .page-heading h1 {
+        font-size: 21px !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .search-box {
+        width: 100% !important;
+    }
+
+    .add-course-btn {
+        width: 100% !important;
+    }
+
+}
+
+/* =========================================================
+   FIX COURSE LINK INPUT
+   Prevent icon from overlapping URL text
+========================================================= */
+
+.course-link-input {
+    position: relative !important;
+    width: 100% !important;
+}
+
+
+/* Course link icon */
+
+.course-link-input i,
+.course-link-input .input-icon {
+    position: absolute !important;
+
+    left: 18px !important;
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 36px !important;
+    height: 36px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #22d3ee !important;
+
+    background:
+        rgba(34, 211, 238, 0.10) !important;
+
+    border: 1px solid rgba(34, 211, 238, 0.20) !important;
+
+    border-radius: 10px !important;
+
+    font-size: 16px !important;
+
+    z-index: 5 !important;
+
+    pointer-events: none !important;
+}
+
+
+/* Actual input */
+
+.course-link-input input,
+input[name="course_link"],
+#courseLink {
+    width: 100% !important;
+
+    min-height: 64px !important;
+
+    padding-left: 70px !important;
+    padding-right: 20px !important;
+
+    color: #ffffff !important;
+
+    background:
+        rgba(4, 12, 28, 0.90) !important;
+
+    border: 1px solid rgba(34, 211, 238, 0.35) !important;
+
+    border-radius: 16px !important;
+
+    outline: none !important;
+
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 17px !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1.4 !important;
+
+    box-sizing: border-box !important;
+
+    transition: all 0.25s ease !important;
+}
+
+
+/* Placeholder */
+
+.course-link-input input::placeholder,
+input[name="course_link"]::placeholder,
+#courseLink::placeholder {
+    color: #64748b !important;
+
+    font-size: 15px !important;
+
+    font-weight: 500 !important;
+}
+
+
+/* Focus */
+
+.course-link-input input:focus,
+input[name="course_link"]:focus,
+#courseLink:focus {
+
+    border-color: #22d3ee !important;
+
+    box-shadow:
+        0 0 0 3px rgba(34, 211, 238, 0.08),
+        0 0 25px rgba(34, 211, 238, 0.08) !important;
+
+    background:
+        rgba(5, 15, 33, 0.98) !important;
+}
+
+
+/* =========================================================
+   COURSE LINK LABEL
+========================================================= */
+
+.course-link-label,
+label[for="courseLink"] {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 9px !important;
+
+    margin-bottom: 10px !important;
+
+    color: #b7c5dc !important;
+
+    font-size: 15px !important;
+
+    font-weight: 700 !important;
+}
+
+
+/* Label icon */
+
+.course-link-label i,
+label[for="courseLink"] i {
+
+    color: #22d3ee !important;
+
+    font-size: 16px !important;
+}
+
+
+/* =========================================================
+   HELP TEXT
+========================================================= */
+
+.course-link-input+small,
+.course-link-help {
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    gap: 7px !important;
+
+    margin-top: 8px !important;
+
+    color: #667995 !important;
+
+    font-size: 11px !important;
+
+    font-weight: 500 !important;
+}
+
+.course-link-input+small i,
+.course-link-help i {
+
+    color: #22d3ee !important;
+}
+
+/* =========================================================
+   LOGOUT BUTTON - FIX / MAKE VISIBLE
+========================================================= */
+
+.sidebar-bottom {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+
+    padding-top: 18px !important;
+    padding-bottom: 20px !important;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+
+/* Logout button */
+
+.logout-btn {
+    width: 100% !important;
+    height: 54px !important;
+
+    min-height: 54px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 10px !important;
+
+    padding: 0 20px !important;
+
+    margin: 0 !important;
+
+    color: #ff6b81 !important;
+
+    background:
+        linear-gradient(135deg,
+            rgba(239, 68, 68, 0.10),
+            rgba(190, 40, 70, 0.06)) !important;
+
+    border: 1px solid rgba(239, 68, 68, 0.25) !important;
+
+    border-radius: 15px !important;
+
+    font-family: "Poppins", sans-serif !important;
+
+    font-size: 15px !important;
+
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    position: relative !important;
+
+    z-index: 20 !important;
+
+    transition: all 0.25s ease !important;
+}
+
+
+/* Logout icon */
+
+.logout-btn i {
+    display: inline-flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    color: #ff5f76 !important;
+
+    font-size: 17px !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Logout text */
+
+.logout-btn span {
+    display: inline-block !important;
+
+    color: inherit !important;
+
+    font-size: 15px !important;
+
+    font-weight: 700 !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+}
+
+
+/* Hover */
+
+.logout-btn:hover {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(135deg,
+            rgba(239, 68, 68, 0.25),
+            rgba(190, 40, 70, 0.18)) !important;
+
+    border-color:
+        rgba(239, 68, 68, 0.50) !important;
+
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+        0 10px 25px rgba(239, 68, 68, 0.18) !important;
+}
+
+
+.logout-btn:hover i {
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   MAKE SIDEBAR BOTTOM STAY INSIDE SCREEN
+========================================================= */
+
+.sidebar {
+    height: 100vh !important;
+
+    min-height: 100vh !important;
+
+    max-height: 100vh !important;
+
+    overflow-y: auto !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+}
+
+
+/* Keep navigation and bottom section separated */
+
+.sidebar-nav {
+    flex: 1 !important;
+
+    min-height: 0 !important;
+
+    overflow-y: auto !important;
+
+    padding-bottom: 10px !important;
+}
+
+
+/* Hide ugly scrollbar */
+
+.sidebar::-webkit-scrollbar,
+.sidebar-nav::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(34, 211, 238, 0.25);
+
+    border-radius: 10px;
+}

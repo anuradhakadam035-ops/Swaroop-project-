@@ -1,0 +1,768 @@
+/* ==========================================
+   AI Resume Analyzer
+   Premium Glassmorphism UI
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+
+    --bg: #07111f;
+    --card: #111d31;
+    --card2: #162641;
+
+    --primary: #2563EB;
+    --cyan: #22D3EE;
+    --green: #10B981;
+    --orange: #F59E0B;
+    --red: #EF4444;
+
+    --text: #F8FAFC;
+    --text2: #94A3B8;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(circle at top left, #2563EB22, transparent 35%),
+
+        radial-gradient(circle at bottom right, #22D3EE22, transparent 35%),
+
+        linear-gradient(135deg, #07111f, #0c182c, #162641);
+
+}
+
+/* ================= Scrollbar ================= */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #2563EB;
+    border-radius: 30px;
+
+}
+
+/* ================= Background Glow ================= */
+
+.bg-glow {
+
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(180px);
+    z-index: -1;
+    opacity: .18;
+
+}
+
+.glow1 {
+
+    width: 380px;
+    height: 380px;
+
+    background: #2563EB;
+
+    left: -100px;
+    top: -100px;
+
+}
+
+.glow2 {
+
+    width: 320px;
+    height: 320px;
+
+    background: #22D3EE;
+
+    right: -120px;
+    bottom: -100px;
+
+}
+
+/* ================= Hero ================= */
+
+.hero {
+
+    text-align: center;
+
+    padding: 60px;
+
+    margin-bottom: 40px;
+
+    border-radius: 28px;
+
+    background: rgba(255, 255, 255, .05);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    box-shadow:
+
+        0 25px 60px rgba(0, 0, 0, .35);
+
+}
+
+.hero-icon {
+
+    font-size: 70px;
+
+    color: #38BDF8;
+
+    margin-bottom: 25px;
+
+    animation: float 3s ease-in-out infinite;
+
+}
+
+.hero h1 {
+
+    font-size: 48px;
+
+    font-weight: 800;
+
+    background: linear-gradient(90deg, #60A5FA, #22D3EE);
+
+    color: transparent;
+
+}
+
+.hero p {
+
+    color: #CBD5E1;
+
+    margin-top: 18px;
+
+    font-size: 18px;
+
+    max-width: 760px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* ================= Upload Card ================= */
+
+.upload-card {
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, .05);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    transition: .4s;
+
+}
+
+.upload-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+
+        0 25px 60px rgba(37, 99, 235, .25);
+
+}
+
+.upload-card h3 {
+
+    margin-bottom: 25px;
+
+    font-weight: 700;
+
+    color: #38BDF8;
+
+}
+
+.upload-card input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    border: none;
+
+    background: #101C31;
+
+    color: white;
+
+    margin-bottom: 25px;
+
+}
+
+.upload-card input::file-selector-button {
+
+    background: #2563EB;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    margin-right: 15px;
+
+    transition: .3s;
+
+}
+
+.upload-card input::file-selector-button:hover {
+
+    background: #1D4ED8;
+
+}
+
+/* ================= Button ================= */
+
+.upload-btn {
+
+    padding: 16px 40px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: linear-gradient(135deg, #2563EB, #22D3EE);
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    transition: .35s;
+
+}
+
+.upload-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+
+        0 15px 35px rgba(37, 99, 235, .35);
+
+}
+
+/* ================= Loading ================= */
+
+.loading-section {
+
+    text-align: center;
+
+    padding: 50px;
+
+}
+
+.loader {
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    border: 6px solid rgba(255, 255, 255, .12);
+
+    border-top: 6px solid #38BDF8;
+
+    margin: auto;
+
+    animation: spin 1s linear infinite;
+
+}
+
+.loading-section h4 {
+
+    margin-top: 25px;
+
+    color: #CBD5E1;
+
+}
+
+
+/* ==========================================
+   SCORE CARDS
+========================================== */
+
+.score-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, .05);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    transition: .4s;
+
+    text-align: center;
+
+}
+
+.score-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+
+    left: -50%;
+
+    width: 220%;
+
+    height: 220%;
+
+    background:
+
+        radial-gradient(circle, #2563EB22, transparent 70%);
+
+    transform: rotate(20deg);
+
+    transition: .5s;
+
+}
+
+.score-card:hover::before {
+
+    transform: rotate(180deg);
+
+}
+
+.score-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+
+        0 25px 50px rgba(37, 99, 235, .30);
+
+}
+
+.score-card h5 {
+
+    color: #94A3B8;
+
+    margin-bottom: 18px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+.score-value {
+
+    font-size: 58px;
+
+    font-weight: 800;
+
+    background:
+
+        linear-gradient(90deg, #60A5FA, #22D3EE);
+
+
+
+    color: transparent;
+
+}
+
+/* ==========================================
+   RESULT CARDS
+========================================== */
+
+.result-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 28px;
+
+    padding: 32px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, .05);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    transition: .4s;
+
+}
+
+.result-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+
+        0 20px 45px rgba(34, 211, 238, .18);
+
+}
+
+.result-card h3 {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color: #38BDF8;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+}
+
+.result-card h3 i {
+
+    font-size: 22px;
+
+}
+
+/* ==========================================
+   SKILL CHIPS
+========================================== */
+
+.chips {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+}
+
+.chips span {
+
+    padding: 12px 22px;
+
+    border-radius: 50px;
+
+    background: #2563EB22;
+
+    border: 1px solid #2563EB55;
+
+    color: #60A5FA;
+
+    font-weight: 600;
+
+    transition: .35s;
+
+}
+
+.chips span:hover {
+
+    background: #2563EB;
+
+    color: white;
+
+    transform: translateY(-4px);
+
+}
+
+/* Missing Skill */
+
+#missingSkills span {
+
+    background: #EF444422;
+
+    border: 1px solid #EF444455;
+
+    color: #F87171;
+
+}
+
+#missingSkills span:hover {
+
+    background: #EF4444;
+
+    color: white;
+
+}
+
+/* ==========================================
+   PROJECTS
+========================================== */
+
+#projects {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+#projects li {
+
+    margin-bottom: 15px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: #101C31;
+
+    border-left: 5px solid #22D3EE;
+
+    transition: .3s;
+
+}
+
+#projects li:hover {
+
+    transform: translateX(8px);
+
+    background: #142543;
+
+}
+
+/* ==========================================
+   COURSES
+========================================== */
+
+#courses {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+#courses li {
+
+    margin-bottom: 15px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: #101C31;
+
+    border-left: 5px solid #10B981;
+
+    transition: .3s;
+
+}
+
+#courses li:hover {
+
+    transform: translateX(8px);
+
+    background: #142543;
+
+}
+
+/* ==========================================
+   SUMMARY
+========================================== */
+
+#summary {
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #CBD5E1;
+
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes spin {
+
+    from {
+
+        transform: rotate(0deg);
+
+    }
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.hero,
+.upload-card,
+.score-card,
+.result-card {
+
+    animation: fadeUp .8s ease;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px) {
+
+    .hero {
+
+        padding: 40px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 36px;
+
+    }
+
+    .score-value {
+
+        font-size: 44px;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .hero {
+
+        padding: 30px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 30px;
+
+    }
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+    .upload-card {
+
+        padding: 30px;
+
+    }
+
+    .result-card {
+
+        padding: 24px;
+
+    }
+
+    .score-value {
+
+        font-size: 36px;
+
+    }
+
+    .chips {
+
+        gap: 8px;
+
+    }
+
+    .chips span {
+
+        font-size: 13px;
+
+        padding: 10px 16px;
+
+    }
+
+}
